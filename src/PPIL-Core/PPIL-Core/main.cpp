@@ -1,6 +1,8 @@
 #include "Point.h"
 #include "Segment.h"
 #include "Circle.h"
+#include "Square.h"
+#include <vector>
 
 using namespace std;
 
@@ -14,12 +16,27 @@ int main() {
 	Point* pointD = new Point(Form::GREEN, 9, 4);
 	//cout << *pointB << endl;
 
-	Segment* segmentA = new Segment(Form::CYAN, pointA, pointB);
+	Segment* segmentA = new Segment(Form::RED, pointA, pointB);
 	//cout << *segmentA << endl;
-
 	Segment* segmentB = new Segment(Form::CYAN, pointC, pointD);
 	//cout << *segmentB << endl;
+	Segment* segmentC = new Segment(Form::YELLOW, pointA, pointB);
+	//cout << *segmentA << endl;
+	Segment* segmentD = new Segment(Form::GREEN, pointC, pointD);
+	//cout << *segmentB << endl;
+
+	vector<Segment*> _collectionSegments;
+	_collectionSegments.push_back(segmentA);
+	_collectionSegments.push_back(segmentB);
+	_collectionSegments.push_back(segmentC);
+	_collectionSegments.push_back(segmentD);
+
+	Square* square = new Square(Form::RED, _collectionSegments);
+	cout << *square << endl;
 
 	Circle* circle = new Circle(Form::RED, pointC, 3);
 	//cout << *circle << endl;
+
+	delete pointA, pointB, pointC, pointD, segmentA, segmentB, segmentC, segmentD;
+	cout << *square << endl;
 }

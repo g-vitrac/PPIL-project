@@ -2,11 +2,10 @@
 
 Segment::Segment(int color, Point* pointA, Point* pointB)
 {
+    _color = color;
     _pointA = (Point*)pointA->clone();
     _pointB = (Point*)pointB->clone();
-    _color = color;
-    _area = calculateArea();
-    _perimeter = calculatePerimeter();
+    _gravityMarking = calculateGravityMarking(getCollectionPointsToGravity());
 }
 
 Segment::~Segment()
@@ -15,24 +14,22 @@ Segment::~Segment()
     delete _pointB;
 }
 
-const Point* Segment::getPointA() const
+Point* Segment::getPointA() const
 {
     return _pointA;
 }
 
-const Point* Segment::getPointB() const
+Point* Segment::getPointB() const
 {
     return _pointB;
 }
 
-double const Segment::calculateArea() const
+const vector<Point*> Segment::getCollectionPointsToGravity() const
 {
-    return 0;
-}
-
-double const Segment::calculatePerimeter() const
-{
-    return 0;
+    vector<Point*> collectionPoints;
+    collectionPoints.push_back(_pointA);
+    collectionPoints.push_back(_pointB);
+    return collectionPoints;
 }
 
 Form* Segment::clone() const
@@ -47,6 +44,6 @@ Form* Segment::clone() const
 ostream& Segment::afficher(ostream& o) const
 {
     o << "Segment (";
-    Form::afficher(o);
-    return o << "\n     point A = " << *_pointA << ",\n     point B = " << *_pointB << ",\narea = " << _area << ", perimeter = " << _perimeter << ")";
+    Form1D::afficher(o);
+    return o << "\n         point A = " << *_pointA << ",\n         point B = " << *_pointB << ")";
 }

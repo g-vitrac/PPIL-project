@@ -1,4 +1,5 @@
 #pragma once
+#include "Erreur.h"
 #include <iostream>
 
 using namespace std;
@@ -6,9 +7,7 @@ using namespace std;
 class Form
 {
 protected:
-	double _area = 0;
-	double _perimeter = 0;
-	int _color = BLACK;
+	int _color;
 
 public:
 	static const int BLACK = 0;
@@ -20,15 +19,7 @@ public:
 
 	//Pourquoi Form(int color) fonctionne pas ?
 	//Form(int color);
-
-	const double getArea();
-	const double getPerimeter();
-	const int getColor();
-
-	virtual double const calculateArea() const = 0;
-	virtual double const calculatePerimeter() const = 0;
-	virtual Form* clone() const = 0;
-
+	
 	friend ostream& operator<<(ostream & o, const Form & c);
 	virtual ostream& afficher(ostream & o) const;
 };

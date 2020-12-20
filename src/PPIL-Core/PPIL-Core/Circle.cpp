@@ -7,6 +7,7 @@ Circle::Circle(int color, Point* centerPoint, double radius)
 	_radius = radius;
 	_area = calculateArea();
 	_perimeter = calculatePerimeter();
+	_gravityMarking = calculateGravityMarking(getCollectionPointsToGravity());
 }
 
 Circle::~Circle()
@@ -34,6 +35,13 @@ double const Circle::calculatePerimeter() const
 	return 2 * _PI * _radius;
 }
 
+const vector<Point*> Circle::getCollectionPointsToGravity() const
+{
+	vector<Point*> collectionPoints;
+	collectionPoints.push_back(_centerPoint);
+	return collectionPoints;
+}
+
 Form* Circle::clone() const
 {
 	Circle* circle = new Circle(*this);
@@ -44,6 +52,6 @@ Form* Circle::clone() const
 ostream& Circle::afficher(ostream& o) const
 {
 	o << "Circle (";
-	Form::afficher(o);
+	Form2D::afficher(o);
 	return o << "\n     center point = " << *_centerPoint << ",\nradius = " << _radius << ",area = " << _area << ", perimeter = " << _perimeter << ")";
 }

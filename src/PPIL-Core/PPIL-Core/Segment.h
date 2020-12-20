@@ -1,8 +1,8 @@
 #pragma once
-#include "FormDimension.h"
+#include "Form1D.h"
 #include "Point.h"
 
-class Segment : public FormDimension
+class Segment : public Form1D
 {
 private:
 	Point* _pointA;
@@ -12,11 +12,10 @@ public:
 	Segment(int color, Point* pointA, Point* pointB);
 	~Segment();
 
-	const Point * getPointA() const;
-	const Point * getPointB() const;
+	Point * getPointA() const;
+	Point * getPointB() const;
 
-	virtual double const calculateArea() const;
-	virtual double const calculatePerimeter() const;
+	virtual const vector<Point*> getCollectionPointsToGravity() const;
 	virtual Form* clone() const;
 
 	virtual ostream& afficher(ostream& o) const;

@@ -140,20 +140,34 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="Erreur.h" />
     <ClInclude Include="Form.h" />
-    <ClInclude Include="FormDimension.h" />
+    <ClInclude Include="Form1D.h" />
+    <ClInclude Include="Form2D.h" />
+    <ClInclude Include="FormND.h" />
+    <ClInclude Include="Marking.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Polygon.h" />
+    <ClInclude Include="PolygonIrregular.h" />
+    <ClInclude Include="PolygonRegular.h" />
     <ClInclude Include="Segment.h" />
+    <ClInclude Include="Square.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="Erreur.cpp" />
     <ClCompile Include="Form.cpp" />
-    <ClCompile Include="FormDimension.cpp" />
+    <ClCompile Include="Form1D.cpp" />
+    <ClCompile Include="Form2D.cpp" />
+    <ClCompile Include="FormND.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Marking.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Polygon.cpp" />
+    <ClCompile Include="PolygonIrregular.cpp" />
+    <ClCompile Include="PolygonRegular.cpp" />
     <ClCompile Include="Segment.cpp" />
+    <ClCompile Include="Square.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

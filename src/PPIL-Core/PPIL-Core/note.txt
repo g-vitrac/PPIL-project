@@ -7,4 +7,7 @@
 	* Forme (polygone/cercle/segment/point) ?
 - Point d'ancrage / point de gravité ? ce mettre d'accord avec le prof ?
 
+form (couleur) ->0 dimension, 1 dimension, 2 dimension etc...
+2eme dim -> air, 3eme dim -> volume
+
 
