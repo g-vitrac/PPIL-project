@@ -1,11 +1,16 @@
 #include "Form.h"
 
-ostream& Form::afficher(ostream& o) const
+const int Form::getColor() const
 {
-	return o << "Form (Color = " << _color << ")";
+	return _color;
 }
 
 ostream& operator<<(ostream& o, const Form& c)
 {
-	return c.afficher(o);
+	return c.display(o);
+}
+
+ostream& Form::display(ostream& o) const
+{
+	return o << "Form (color = " << _color << ")";
 }

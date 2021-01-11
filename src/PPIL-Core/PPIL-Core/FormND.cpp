@@ -23,15 +23,15 @@ Marking* FormND::calculateGravityMarking(vector<Point*> collection)
         return new Marking(new Point(_color, posX / size, posY / size));
     }
     else {
-        throw new Erreur("calculateGravityMarking : collection taille <= 0");
+        throw Error("calculateGravityMarking : collection taille <= 0");
     }
 
     return NULL;
 }
 
-ostream& FormND::afficher(ostream& o) const
+ostream& FormND::display(ostream& o) const
 {
     o << "FormND (";
-    Form::afficher(o);
+    Form::display(o);
     return o << "\n      gravity marking = " << *_gravityMarking << ")";
 }

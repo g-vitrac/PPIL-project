@@ -3,8 +3,10 @@
 class PolygonRegular : public Polygon
 {
 public:
+	const bool isPolygonRegular() const;
+
 	virtual const double calculateArea() const;
 
-	virtual ostream& afficher(ostream& o) const;
+	virtual ostream& display(ostream& o) const;
 };
 

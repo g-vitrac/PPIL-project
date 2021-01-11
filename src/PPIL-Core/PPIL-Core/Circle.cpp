@@ -49,9 +49,9 @@ Form* Circle::clone() const
 	return circle;
 }
 
-ostream& Circle::afficher(ostream& o) const
+ostream& Circle::display(ostream& o) const
 {
 	o << "Circle (";
-	Form2D::afficher(o);
+	Form2D::display(o);
 	return o << "\n     center point = " << *_centerPoint << ",\nradius = " << _radius << ",area = " << _area << ", perimeter = " << _perimeter << ")";
 }

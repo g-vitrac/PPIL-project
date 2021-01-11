@@ -17,6 +17,6 @@ public:
 
 	virtual const vector<Point*> getCollectionPointsToGravity() const = 0;
 
-	virtual ostream& afficher(ostream& o) const;
+	virtual ostream& display(ostream& o) const;
 };
 

@@ -1,13 +1,9 @@
-- Polygone ->clone et delete la collection possible ?
-- From.h crée un constructeur pour la couleur ?
-- pointeur de vector ? 
-- créer une cor pour :
-	* Polygone (triangle/quadrilatere/pentagone...)
-	* Elipse (cercle/ovale...) ?
-	* Forme (polygone/cercle/segment/point) ?
-- Point d'ancrage / point de gravité ? ce mettre d'accord avec le prof ?
+/QUESTION\
+- Square -> simplifier dans polygon qui est abstrait ?.
+- créer figure à partir de point ou de segment ? -> arraySegment directement dans l'ordre qui correspond aux segments
+- tout reconstruire à chaque modification de figure ?
 
-form (couleur) ->0 dimension, 1 dimension, 2 dimension etc...
-2eme dim -> air, 3eme dim -> volume
+/CORRECTION\
+- réecrire getCollectionPointsToGravity() -> moyen opti de recuperer les points ?
 
 

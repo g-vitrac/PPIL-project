@@ -16,6 +16,7 @@ public:
 
 	virtual Form* clone() const;
 
-	virtual ostream& afficher(ostream& o) const;
+	bool operator == (const Point & p);
+	virtual ostream& display(ostream& o) const;
 };
 

@@ -15,9 +15,12 @@ public:
 	Point * getPointA() const;
 	Point * getPointB() const;
 
+	const bool isAdjacentSides(Segment* segment);
+	const double calculateDistance();
+
 	virtual const vector<Point*> getCollectionPointsToGravity() const;
 	virtual Form* clone() const;
 
-	virtual ostream& afficher(ostream& o) const;
+	virtual ostream& display(ostream& o) const;
 };
 

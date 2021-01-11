@@ -1,8 +1,8 @@
 #include "PolygonIrregular.h"
 
-ostream& PolygonIrregular::afficher(ostream& o) const
+ostream& PolygonIrregular::display(ostream& o) const
 {
 	o << "PolygonIrregular (";
-	Polygon::afficher(o);
+	Polygon::display(o);
 	return o << ")";
 }

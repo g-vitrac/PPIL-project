@@ -24,6 +24,18 @@ Point* Segment::getPointB() const
     return _pointB;
 }
 
+const bool Segment::isAdjacentSides(Segment* segment)
+{
+    return *this->_pointA == *segment->_pointA || *this->_pointA == *segment->_pointB || *this->_pointB == *segment->_pointA || *this->_pointB == *segment->_pointB;
+}
+
+const double Segment::calculateDistance()
+{
+    double posX = _pointA->getPosX() - _pointB->getPosX();
+    double posY = _pointA->getPosY() - _pointB->getPosY();
+    return sqrt((posX * posX) + (posY * posY));
+}
+
 const vector<Point*> Segment::getCollectionPointsToGravity() const
 {
     vector<Point*> collectionPoints;
@@ -41,9 +53,9 @@ Form* Segment::clone() const
     return segment;
 }
 
-ostream& Segment::afficher(ostream& o) const
+ostream& Segment::display(ostream& o) const
 {
     o << "Segment (";
-    Form1D::afficher(o);
+    Form1D::display(o);
     return o << "\n         point A = " << *_pointA << ",\n         point B = " << *_pointB << ")";
 }

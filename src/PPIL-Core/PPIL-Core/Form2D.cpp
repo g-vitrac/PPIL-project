@@ -1,23 +1,18 @@
 #include "Form2D.h"
 
-const double Form2D::getArea()
+const double Form2D::getArea() const
 {
 	return _area;
 }
 
-const double Form2D::getPerimeter()
+const double Form2D::getPerimeter() const
 {
 	return _perimeter;
 }
 
-const int Form2D::getColor()
-{
-	return _color;
-}
-
-ostream& Form2D::afficher(ostream& o) const
+ostream& Form2D::display(ostream& o) const
 {
 	o << "Form2D (";
-	FormND::afficher(o);
-	return o << ")";
+	FormND::display(o);
+	return o << "area = " << _area << ", perimeter = " << _perimeter << ")";
 }

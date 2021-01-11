@@ -3,6 +3,6 @@
 class PolygonIrregular : public Polygon
 {
 public:
-	virtual ostream& afficher(ostream& o) const;
+	virtual ostream& display(ostream& o) const;
 };
 

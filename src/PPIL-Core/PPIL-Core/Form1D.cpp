@@ -1,8 +1,8 @@
 #include "Form1D.h"
 
-ostream& Form1D::afficher(ostream& o) const
+ostream& Form1D::display(ostream& o) const
 {
 	o << "Form1D (";
-	FormND::afficher(o);
+	FormND::display(o);
 	return o << ")";
 }

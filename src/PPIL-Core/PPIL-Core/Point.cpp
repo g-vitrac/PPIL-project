@@ -26,9 +26,14 @@ Form* Point::clone() const
     return new Point(*this);
 }
 
-ostream& Point::afficher(ostream& o) const
+bool Point::operator==(const Point& p)
+{
+    return this->_posX == p._posX && this->_posY == p._posY;
+}
+
+ostream& Point::display(ostream& o) const
 {
     o << "Point (";
-    Form::afficher(o);
+    Form::display(o);
     return o << "position X = " << _posX << ", postion Y = " << _posY << ")";
 }

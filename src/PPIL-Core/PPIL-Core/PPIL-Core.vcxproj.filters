@@ -45,13 +45,13 @@
     <ClInclude Include="Form1D.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Erreur.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="PolygonIrregular.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="PolygonRegular.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Error.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
@@ -89,13 +89,13 @@
     <ClCompile Include="Form1D.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Erreur.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="PolygonIrregular.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="PolygonRegular.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Error.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

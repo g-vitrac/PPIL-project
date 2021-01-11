@@ -2,11 +2,20 @@
 
 Square::Square(int color, vector<Segment*> collectionSegments)
 {
-	_color = color;
-	for (unsigned int i = 0; i < collectionSegments.size(); i++) {
-		_collectionSegments.push_back((Segment*)collectionSegments[i]->clone());
+	try {
+		if (collectionSegments.size() != 4) throw Error("impossible to create square -> number of segment wrong");
+		switchCollectionSegmentsWithCheckAndSort(collectionSegments);
+		setCollectionSegments(collectionSegments);
+		if (isPolygonRegular() == false) throw Error("polygon isn't a regular polygon");
+		_color = color;
+		_gravityMarking = calculateGravityMarking(getCollectionPointsToGravity());
+		_perimeter = calculatePerimeter();
+		_area = calculateArea();
 	}
-	_gravityMarking = calculateGravityMarking(getCollectionPointsToGravity());
+	catch (Error const& e) {
+		cerr << e << endl;
+		delete this;
+	}
 }
 
 Square::~Square()
@@ -25,9 +34,9 @@ Form* Square::clone() const
 	return square;
 }
 
-ostream& Square::afficher(ostream& o) const
+ostream& Square::display(ostream& o) const
 {
 	o << "Square (";
-	PolygonRegular::afficher(o);
+	PolygonRegular::display(o);
 	return o << ")";
 }
