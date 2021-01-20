@@ -1,25 +1,19 @@
 #pragma once
-#include "Form1D.h"
+#include "FormND.h"
 #include "Point.h"
 
-class Segment : public Form1D
+class Segment : public FormND
 {
-private:
-	Point* _pointA;
-	Point* _pointB;
-
 public:
-	Segment(int color, Point* pointA, Point* pointB);
+	Segment(Point pointA, Point pointB, int color);
 	~Segment();
 
-	Point * getPointA() const;
-	Point * getPointB() const;
+	virtual const double calculateArea() const;
+	virtual const double calculatePerimeter() const;
+	//const bool isAdjacentSides(Segment* segment);
+	//const double calculateDistance();
 
-	const bool isAdjacentSides(Segment* segment);
-	const double calculateDistance();
-
-	virtual const vector<Point*> getCollectionPointsToGravity() const;
-	virtual Form* clone() const;
+	//virtual Form* clone() const;
 
 	virtual ostream& display(ostream& o) const;
 };

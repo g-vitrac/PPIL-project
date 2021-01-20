@@ -1,13 +1,13 @@
 #pragma once
-#include "Form2D.h"
+#include "FormND.h"
 #include "Segment.h"
 
-class Polygon : public Form2D
+class Polygon : public FormND
 {
 protected:
-	vector<Segment*> _collectionSegments;
 
 public:
+	/*
 	const vector<Segment*> getCollectionSegments() const;
 	void setCollectionSegments(vector<Segment*> collectionSegments);
 	void switchCollectionSegmentsWithCheckAndSort(vector<Segment*> & collectionSegments);
@@ -16,5 +16,6 @@ public:
 	virtual const vector<Point*> getCollectionPointsToGravity() const;
 
 	virtual ostream& display(ostream& o) const;
+	*/
 };
 

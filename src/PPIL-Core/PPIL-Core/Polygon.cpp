@@ -1,5 +1,5 @@
 #include "Polygon.h"
-
+/*
 const vector<Segment*> Polygon::getCollectionSegments() const
 {
 	return _collectionSegments;
@@ -66,3 +66,4 @@ ostream& Polygon::display(ostream& o) const
 	}
 	return o << ")";
 }
+*/

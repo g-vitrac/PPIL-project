@@ -1,0 +1,3 @@
+- transformation
+- formules vectorielles point
+- calculerarea/constructeur polygonreulier

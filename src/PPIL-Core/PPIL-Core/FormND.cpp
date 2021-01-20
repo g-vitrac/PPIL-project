@@ -1,37 +1,58 @@
 #include "FormND.h"
 
+const double FormND::getArea() const
+{
+    return _area;
+}
+
+const double FormND::getPerimeter() const
+{
+    return _perimeter;
+}
+
+/*
 Marking* FormND::getAnchorMarking() const
 {
     return _anchorMarking;
 }
+*/
 
-Marking* FormND::getGravityMarking() const
+Point FormND::getGravityPoint() const
 {
-    return _gravityMarking;
+    return _gravityPoint;
 }
 
-Marking* FormND::calculateGravityMarking(vector<Point*> collection)
+Point FormND::getPointToFormPoints(int index)
 {
-    int size = collection.size();
+    if (_formPoints.size() < index - 1)
+        return _formPoints[index];
+    else throw Error("dépassement de tableau");
+}
+
+Point FormND::calculateGravityPoint()
+{
+    int size = _formPoints.size();
     if (size > 0) {
         double posX = 0;
         double posY = 0;
         for (int i = 0; i < size; i++) {
-            posX += collection[i]->getPosX();
-            posY += collection[i]->getPosY();
+            posX += _formPoints[i].getPosX();
+            posY += _formPoints[i].getPosY();
         }
-        return new Marking(new Point(_color, posX / size, posY / size));
+        return Point(posX / size, posY / size, _color);
     }
     else {
-        throw Error("calculateGravityMarking : collection taille <= 0");
+        throw Error("calculateGravityPoint : collection taille <= 0");
     }
-
-    return NULL;
 }
 
 ostream& FormND::display(ostream& o) const
 {
     o << "FormND (";
     Form::display(o);
-    return o << "\n      gravity marking = " << *_gravityMarking << ")";
+    o << "\n     area = " << _area << ", perimeter = " << _perimeter <<  ", gravity point = " << _gravityPoint << ", form points = \n";
+    for (unsigned int i = 0; i < _formPoints.size(); i++) {
+        o << "          point " << i + 1 << " = " << _formPoints[i] << "\n";
+    }
+    return o << ")";
 }

@@ -1,5 +1,6 @@
 #include "Square.h"
 
+/*
 Square::Square(int color, vector<Segment*> collectionSegments)
 {
 	try {
@@ -40,3 +41,4 @@ ostream& Square::display(ostream& o) const
 	PolygonRegular::display(o);
 	return o << ")";
 }
+*/

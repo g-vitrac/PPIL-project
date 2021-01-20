@@ -8,14 +8,17 @@ private:
 	double _posY;
 
 public:
-	Point(int color, double posX, double posY);
+	Point();
+	Point(double posX, double posY, int color);
+	Point(const Point & p);
 	~Point();
 
 	double getPosX() const;
 	double getPosY() const;
 
-	virtual Form* clone() const;
+	//virtual Form* clone() const;
 
+	Point & operator=(const Point & p);
 	bool operator == (const Point & p);
 	virtual ostream& display(ostream& o) const;
 };

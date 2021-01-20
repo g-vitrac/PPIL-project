@@ -2,6 +2,7 @@
 #include "Error.h"
 #include <iostream>
 #include <math.h> 
+#include <vector>
 
 using namespace std;
 
@@ -20,8 +21,8 @@ public:
 
 	const int getColor() const;
 
-	//Pourquoi Form(int color) fonctionne pas ?
 	//Form(int color);
+	//virtual Form* clone() const = 0;
 	
 	friend ostream& operator<<(ostream & o, const Form & c);
 	virtual ostream& display(ostream & o) const;

@@ -1,9 +1,13 @@
 #pragma once
-#include "Polygon.h"
-class PolygonRegular : public Polygon
+#include "FormND.h"
+
+class PolygonRegular : public FormND
 {
 public:
-	const bool isPolygonRegular() const;
+	PolygonRegular(Point centerPoint, double diameter, int numberSide, int color);
+	~PolygonRegular();
+
+	//const bool isPolygonRegular() const;
 
 	virtual const double calculateArea() const;
 
