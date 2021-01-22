@@ -1,13 +1,13 @@
 #include "Circle.h"
 
-Circle::Circle(Point centerPoint, double radius, int color)
+Circle::Circle(Vecteur2D centerVecteur2D, double radius, int color)
 {
 	_color = color;
 	_radius = radius;
-	_formPoints.push_back(centerPoint);
+	_formVecteur2D.push_back(centerVecteur2D);
 	_area = calculateArea();
 	_perimeter = calculatePerimeter();
-	_gravityPoint = calculateGravityPoint();
+	_gravityVecteur2D = calculateGravityVecteur2D();
 }
 
 Circle::~Circle()
@@ -33,7 +33,7 @@ double const Circle::calculatePerimeter() const
 Form* Circle::clone() const
 {
 	Circle* circle = new Circle(*this);
-	circle->_centerPoint = (Point*)this->_centerPoint->clone();
+	circle->_centerVecteur2D = (Vecteur2D*)this->_centerVecteur2D->clone();
 	return circle;
 }
 */
@@ -41,6 +41,6 @@ Form* Circle::clone() const
 ostream& Circle::display(ostream& o) const
 {
 	o << "Circle (";
-	FormND::display(o);
+	Form::display(o);
 	return o << "\n      radius = " << _radius << ", area = " << _area << ", perimeter = " << _perimeter << ")";
 }

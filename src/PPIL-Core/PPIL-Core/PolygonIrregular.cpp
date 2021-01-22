@@ -3,6 +3,6 @@
 ostream& PolygonIrregular::display(ostream& o) const
 {
 	o << "PolygonIrregular (";
-	Polygon::display(o);
+	Form::display(o);
 	return o << ")";
 }

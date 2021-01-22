@@ -1,10 +1,10 @@
 #pragma once
-#include "FormND.h"
+#include "Form.h"
 
-class PolygonRegular : public FormND
+class PolygonRegular : public Form
 {
 public:
-	PolygonRegular(Point centerPoint, double diameter, int numberSide, int color);
+	PolygonRegular(Vecteur2D centerVecteur2D, double radius, int numberSide, int color);
 	~PolygonRegular();
 
 	//const bool isPolygonRegular() const;

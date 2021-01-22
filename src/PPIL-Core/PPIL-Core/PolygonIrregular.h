@@ -1,8 +1,8 @@
 #pragma once
-#include "Polygon.h"
-class PolygonIrregular : public Polygon
+#include "Form.h"
+
+class PolygonIrregular : public Form
 {
 public:
 	virtual ostream& display(ostream& o) const;
 };
-

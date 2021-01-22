@@ -1,19 +1,19 @@
 #pragma once
-#include "Point.h"
+#include "Vecteur2D.h"
 
 class Marking
 {
 private:
-	Point _centerPoint;
+	Vecteur2D _centerVecteur2D;
 	double _radiant;
 	double _lambda;
 
 public:
-	Marking(Point centerPoint);
-	Marking(Point centerPoint, double radiant);
+	Marking(Vecteur2D centerVecteur2D);
+	Marking(Vecteur2D centerVecteur2D, double radiant);
 	~Marking();
 
-	const Point getCenterPoint() const;
+	const Vecteur2D getCenterVecteur2D() const;
 	const double getRadiant() const;
 	const double getLambda() const;
 

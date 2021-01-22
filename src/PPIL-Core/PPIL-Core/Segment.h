@@ -1,11 +1,11 @@
 #pragma once
-#include "FormND.h"
-#include "Point.h"
+#include "Form.h"
+#include "Vecteur2D.h"
 
-class Segment : public FormND
+class Segment : public Form
 {
 public:
-	Segment(Point pointA, Point pointB, int color);
+	Segment(Vecteur2D Vecteur2DA, Vecteur2D Vecteur2DB, int color);
 	~Segment();
 
 	virtual const double calculateArea() const;
