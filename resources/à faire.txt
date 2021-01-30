@@ -1,3 +1,2 @@
 - transformation
-- formules vectorielles point
-- calculerarea/constructeur polygonreulier
+- rename marking, vecteur2D

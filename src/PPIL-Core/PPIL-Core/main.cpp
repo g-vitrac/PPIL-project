@@ -3,39 +3,37 @@
 #include "Circle.h"
 #include "GroupForm.h"
 #include "World.h"
+#include "PolygonConvex.h"
+
+#include "TCircle.h"
+#include "TSegment.h"
+#include "TVecteur2D.h"
+#include "TPolygonConvex.h"
+#include "TDraw.h"
+#include "TGroupForm.h"
 
 using namespace std;
 
 int main() {
-	Vecteur2D Vecteur2DA = Vecteur2D(0, 2, Form::BLUE);
+
+	//TCircle tcircle = TCircle(); tcircle.test();
+	//TSegment tsegment = TSegment(); tsegment.test();
+	//TVecteur2D tvecteur2D = TVecteur2D(); tvecteur2D.test();
+	//TPolygonConvex tpolygonConvex = TPolygonConvex(); tpolygonConvex.test();
+	TDraw draw = TDraw(); draw.test();
+	//TGroupForm groupForm = TGroupForm(); groupForm.test();
+
+	/*
+	Vecteur2D Vecteur2DA = Vecteur2D(0, 2);
 	cout << Vecteur2DA << endl;
-	Vecteur2D Vecteur2DB = Vecteur2D(4, 3, Form::GREEN);
+	Vecteur2D Vecteur2DB = Vecteur2D(4, 3);
 	cout << Vecteur2DB << endl;
-	Vecteur2D Vecteur2DC = Vecteur2D(4, 7, Form::BLUE);
+	Vecteur2D Vecteur2DC = Vecteur2D(4, 7);
 	cout << Vecteur2DC << endl;
-	Vecteur2D Vecteur2DD = Vecteur2D(0, 7, Form::GREEN);
+	Vecteur2D Vecteur2DD = Vecteur2D(0, 7);
 	cout << Vecteur2DD << endl;
 
 	Segment * segmentA = new Segment(Vecteur2DA, Vecteur2DB, Form::RED);
 	//delete segmentA; fonctionne
-
-	Circle * cercleA = new Circle(Vecteur2DC, 10.2, Form::RED);
-	//delete cercleA; fonctionne
-	Circle * cercleB = new Circle(Vecteur2DD, 3.5, Form::BLACK);
-	//delete cercleB; fonctionne
-
-	return 0;
-	GroupForm* subRootA = new GroupForm(cercleA);
-	GroupForm* subRootB = new GroupForm(cercleB);
-	vector<Form*> vecteurForm;
-	vecteurForm.push_back(subRootA);
-	vecteurForm.push_back(subRootB);
-
-	GroupForm* root = new GroupForm(vecteurForm);
-
-	World world = World(root);
-	cout << world << endl;
-
-	//Problème liberation mémoire
-	//delete root;
+	*/
 }

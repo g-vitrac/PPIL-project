@@ -18,6 +18,8 @@ public:
 	virtual const double calculatePerimeter() const;
 	//virtual Form* clone() const;
 
+	virtual void draw(Visitor* visitor);
+
 	virtual ostream& display(ostream& o) const;
 };
 

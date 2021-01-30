@@ -1,6 +1,6 @@
 #include "Error.h"
 
-Error::Error()
+Error::Error() throw()
 {
 	_message = _strdup("NULL MESSAGE");
 	_number = -1;

@@ -3,19 +3,13 @@
 GroupForm::GroupForm(vector<Form*> childsForm, Form* parentForm)
 {
 	for (unsigned int i = 0; i < childsForm.size(); i++) {
-		_childsForm.push_back(childsForm[i]);
-		_formVecteur2D.push_back(childsForm[i]->getGravityVecteur2D());
+		insertGroup(childsForm[i]);
 	}
-	_parentForm = parentForm;
-	calculateByChanging();
 }
 
 GroupForm::GroupForm(Form* childForm, Form* parentForm)
 {
-	_childsForm.push_back(childForm);
-	_formVecteur2D.push_back(childForm->getGravityVecteur2D());
-	_parentForm = parentForm;
-	calculateByChanging();
+	insertGroup(childForm);
 }
 
 GroupForm::~GroupForm()
@@ -23,7 +17,6 @@ GroupForm::~GroupForm()
 	for (unsigned int i = 0; i < _childsForm.size(); i++) {
 		delete _childsForm[i];
 	}
-	delete this;
 }
 
 const double GroupForm::calculateArea() const
@@ -46,25 +39,25 @@ const double GroupForm::calculatePerimeter() const
 
 void GroupForm::insertGroup(Form* form)
 {
-	_childsForm.push_back(form);
-}
-
-void GroupForm::insertGroup(GroupForm* form)
-{
-	_childsForm.push_back(form);
+	this->_childsForm.push_back(form);
+	this->_formVecteur2D.push_back(form->calculateGravityVecteur2D());
 	form->_parentForm = this;
 }
 
 void GroupForm::removeGroup(Form* form)
 {
-	
-}
-
-void GroupForm::calculateByChanging()
-{
-	_area = calculateArea();
-	_perimeter = calculatePerimeter();
-	_gravityVecteur2D = calculateGravityVecteur2D();
+	Form* save = form->_parentForm;
+	form->_parentForm = NULL;
+	bool isErase = false;
+	for (unsigned int i = 0; i < _childsForm.size(); i++) {
+		if (_childsForm[i]->_parentForm == NULL) {
+			_childsForm.erase(_childsForm.begin() + i);
+			_formVecteur2D.erase(_formVecteur2D.begin() + i);
+			isErase = true;
+			break;
+		}
+	}
+	if (!isErase) form->_parentForm = save;
 }
 
 ostream& GroupForm::display(ostream& o) const

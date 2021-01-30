@@ -17,5 +17,6 @@ const Form* World::getRootForm() const
 
 ostream& operator<<(ostream& o, const World& w)
 {
-	return o << "World (" << "root form = " << *w.getRootForm();
+	o << "World (" << "root form = " << *w.getRootForm();
+	return o << ")";
 }

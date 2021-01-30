@@ -144,10 +144,20 @@
     <ClInclude Include="Form.h" />
     <ClInclude Include="GroupForm.h" />
     <ClInclude Include="Marking.h" />
+    <ClInclude Include="Polygon.h" />
+    <ClInclude Include="PolygonConvex.h" />
+    <ClInclude Include="TCircle.h" />
+    <ClInclude Include="TDraw.h" />
+    <ClInclude Include="TGroupForm.h" />
+    <ClInclude Include="TPolygonConvex.h" />
+    <ClInclude Include="TSegment.h" />
+    <ClInclude Include="TVecteur2D.h" />
+    <ClInclude Include="VDraw.h" />
+    <ClInclude Include="VDrawByJavaFX.h" />
     <ClInclude Include="Vecteur2D.h" />
-    <ClInclude Include="PolygonIrregular.h" />
     <ClInclude Include="PolygonRegular.h" />
     <ClInclude Include="Segment.h" />
+    <ClInclude Include="Visitor.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
@@ -157,8 +167,10 @@
     <ClCompile Include="GroupForm.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Marking.cpp" />
+    <ClCompile Include="Polygon.cpp" />
+    <ClCompile Include="PolygonConvex.cpp" />
+    <ClCompile Include="VDrawByJavaFX.cpp" />
     <ClCompile Include="Vecteur2D.cpp" />
-    <ClCompile Include="PolygonIrregular.cpp" />
     <ClCompile Include="PolygonRegular.cpp" />
     <ClCompile Include="Segment.cpp" />
     <ClCompile Include="World.cpp" />

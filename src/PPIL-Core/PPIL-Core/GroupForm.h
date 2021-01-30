@@ -5,7 +5,6 @@ class GroupForm : public Form
 {
 private:
 	vector<Form*> _childsForm;
-	Form* _parentForm;
 
 public:
 	GroupForm(vector<Form*> childsForm, Form* parentForm = NULL);
@@ -17,10 +16,7 @@ public:
 
 	//Comment gerer insert et remove efficacement ?
 	void insertGroup(Form* form);
-	void insertGroup(GroupForm* form);
-	void removeGroup(Form* form); //Cast en GroupForm ?
-
-	void calculateByChanging();
+	void removeGroup(Form* form);
 
 	virtual ostream& display(ostream& o) const;
 };

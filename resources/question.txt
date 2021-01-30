@@ -1,4 +1,5 @@
-- Une couleur pour les points(vecteur2D) ?
-- groupFrom : comment recuperer le père d"une forme ? (si je veux remove)
-- si insertion ou remove, il faut calculateByChanging récursivement
-- comment on crée polygonRegulier ?
+- Instancier Form imposssible car calculatearea et permieter non defini, normal ?
+- liberer pointeur save removeGroup ?
+- protected _parentForm sur groupForm fonctionne pas ??
+- Problème serveur Java
+- visiteur pour draw et transfrom ?

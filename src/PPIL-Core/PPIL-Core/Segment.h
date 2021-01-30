@@ -5,13 +5,13 @@
 class Segment : public Form
 {
 public:
-	Segment(Vecteur2D Vecteur2DA, Vecteur2D Vecteur2DB, int color);
+	Segment(Vecteur2D Vecteur2DA, Vecteur2D Vecteur2DB, int color = BLACK);
 	~Segment();
 
 	virtual const double calculateArea() const;
 	virtual const double calculatePerimeter() const;
-	//const bool isAdjacentSides(Segment* segment);
-	//const double calculateDistance();
+
+	virtual void draw(Visitor* visitor);
 
 	//virtual Form* clone() const;
 

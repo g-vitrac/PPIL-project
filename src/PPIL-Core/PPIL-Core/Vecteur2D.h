@@ -11,17 +11,22 @@ private:
 
 public:
 	Vecteur2D();
-	Vecteur2D(double posX, double posY, int color);
+	Vecteur2D(double posX, double posY);
 	Vecteur2D(const Vecteur2D& p);
 	~Vecteur2D();
 
-	double getPosX() const;
-	double getPosY() const;
+	const double getPosX() const;
+	const double getPosY() const;
 
+	const double distance(const Vecteur2D& v) const;
+	const double determinant(const Vecteur2D& v) const;
 	//virtual Form* clone() const;
 
-	Vecteur2D& operator=(const Vecteur2D& p);
-	bool operator == (const Vecteur2D& p);
+	Vecteur2D operator* (const double & d);
+	Vecteur2D operator+ (const Vecteur2D& v) const;
+	Vecteur2D operator- () const;
+	Vecteur2D & operator= (const Vecteur2D& v);
+	bool operator == (const Vecteur2D& v);
 };
 extern ostream& operator<<(ostream& o, const Vecteur2D& v);
 

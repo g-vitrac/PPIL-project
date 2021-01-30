@@ -1,15 +1,11 @@
 #pragma once
-#include "Form.h"
+#include "PolygonConvex.h"
 
-class PolygonRegular : public Form
+class PolygonRegular : public PolygonConvex
 {
 public:
-	PolygonRegular(Vecteur2D centerVecteur2D, double radius, int numberSide, int color);
+	PolygonRegular(Vecteur2D centerVecteur2D, double radius, int numberSide, int color = BLACK);
 	~PolygonRegular();
-
-	//const bool isPolygonRegular() const;
-
-	virtual const double calculateArea() const;
 
 	virtual ostream& display(ostream& o) const;
 };
