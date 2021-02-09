@@ -1,2 +1,6 @@
 - transformation
 - rename marking, vecteur2D
+- operator string
+- explicit construct simple
+- inline fonction simple
+- init stage without main javfax

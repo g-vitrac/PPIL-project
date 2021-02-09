@@ -1,5 +1,2 @@
-- Instancier Form imposssible car calculatearea et permieter non defini, normal ?
-- liberer pointeur save removeGroup ?
-- protected _parentForm sur groupForm fonctionne pas ??
-- Problème serveur Java
-- visiteur pour draw et transfrom ?
+- drawDetector : faire passer la scene de dessin dedans ou crée un constructeur qui eviterai de faire passer la scene à chaque fois ??
+- Rotation, 0 -> chiffre decimal complexe
