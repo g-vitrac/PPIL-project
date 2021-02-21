@@ -1,6 +1,8 @@
-- transformation
 - rename marking, vecteur2D
-- operator string
+- operator string all class
 - explicit construct simple
 - inline fonction simple
-- init stage without main javfax
+- regex code couleur
+- erase COR
+- groupForm, remplir les transformations
+- envoyer les couleurs (en gerant groupe forme) eclipse
