@@ -15,8 +15,8 @@ class Visitor;
 class Form
 {
 protected:
-	string _color = BLACK;
-	Marking _anchorMarking;
+	string _color;
+	//Marking _anchorMarking;
 
 public:
 	Form* _parentForm; //??????
@@ -29,24 +29,22 @@ public:
 	static const string CYAN;
 	//static const string BLACK = string("#000000");
 
-	explicit Form(string color = BLACK) : _color(color), _parentForm(NULL), _anchorMarking(Marking()) {}
+	explicit Form(string color = BLACK) : _color(color), _parentForm(NULL) {}
 
 	const string getColor() const { return _color; };
-	/*
-	const int getSizeVecteur2D() const { return _formVecteur2D.size(); }
-	Vecteur2D getVecteur2DByIndex(unsigned int index) { if (_formVecteur2D.size() > index) return _formVecteur2D[index]; else throw Error("dépassement de tableau"); }
-	*/
-
-	//Marking* getAnchorMarking() const;
 
 	virtual const double calculateArea() const = 0;
 	virtual const double calculatePerimeter() const = 0;
 	virtual const Vecteur2D calculateGravityVecteur2D() const = 0;
+	virtual const double calculateWindowSize(Vecteur2D centerWindow) const = 0;
 
 	virtual Form* translate(Vecteur2D vec) = 0;
-	virtual Form* rotate(double degrees, Vecteur2D center = Vecteur2D(0, 0)) = 0;
+	virtual Form* rotate(double degrees, Vecteur2D center = Vecteur2D(0,0)) = 0;
 	virtual Form* homothety(double zoom, Vecteur2D center = Vecteur2D(0,0)) = 0;
 
+	virtual Form* clone() const = 0;
+
+	//virtual const string serialize() const = 0;
 	virtual void draw(Visitor* visitor) = 0;
 
 	virtual ostream& display(ostream& o) const;

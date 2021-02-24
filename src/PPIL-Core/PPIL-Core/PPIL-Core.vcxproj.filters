@@ -69,9 +69,6 @@
     <ClInclude Include="Error.h">
       <Filter>Fichiers d%27en-tête\error</Filter>
     </ClInclude>
-    <ClInclude Include="Marking.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Segment.cpp">
@@ -106,9 +103,6 @@
     </ClCompile>
     <ClCompile Include="Error.cpp">
       <Filter>Fichiers sources\error</Filter>
-    </ClCompile>
-    <ClCompile Include="Marking.cpp">
-      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="TDraw.cpp">
       <Filter>Fichiers sources\test</Filter>

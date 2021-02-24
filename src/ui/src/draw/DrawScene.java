@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /*
@@ -25,17 +26,16 @@ public class DrawScene extends JFrame {
 */
 
 public class DrawScene {
-	public Stage primaryStage;
 	public Stage stage;
 	public AnchorPane pane;
 	
-	public DrawScene(Stage primaryStage, Stage stage) {
-		this.primaryStage = primaryStage;
-		this.stage = stage;
+	public DrawScene() {
+		this.stage = new Stage();
 		stage.setTitle("Draw Scene");
 		pane = new AnchorPane();
-		Scene scene = new Scene(pane,800,400);
+		Scene scene = new Scene(pane);
 		stage.setScene(scene);
+		System.out.println("Pane : "+pane);
 		stage.show();	
 	}
 }

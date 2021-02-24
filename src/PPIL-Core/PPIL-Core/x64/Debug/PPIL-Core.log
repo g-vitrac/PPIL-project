@@ -1,18 +1,2 @@
-﻿  Circle.cpp
-  Error.cpp
-  Form.cpp
-  GroupForm.cpp
-D:\Users\loick\Documents\PPIL-project\src\PPIL-Core\PPIL-Core\GroupForm.cpp(43,31): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-  Marking.cpp
-  Polygon.cpp
-D:\Users\loick\Documents\PPIL-project\src\PPIL-Core\PPIL-Core\Polygon.cpp(26,34): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-  PolygonConvex.cpp
-  TDraw.cpp
-  VDrawByJavaFX.cpp
-D:\Users\loick\Documents\PPIL-project\src\PPIL-Core\PPIL-Core\VDrawByJavaFX.cpp(29,8): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
-  Vecteur2D.cpp
-  PolygonRegular.cpp
-  Segment.cpp
-  World.cpp
-  Génération de code en cours...
+﻿  TGroupForm.cpp
   PPIL-Core.vcxproj -> D:\Users\loick\Documents\PPIL-project\src\PPIL-Core\x64\Debug\PPIL-Core.exe

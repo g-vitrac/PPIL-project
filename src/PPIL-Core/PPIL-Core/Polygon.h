@@ -12,6 +12,7 @@ public:
 
 	virtual const double calculatePerimeter() const;
 	virtual const Vecteur2D calculateGravityVecteur2D() const;
+	virtual const double calculateWindowSize(Vecteur2D centerWindow) const { return 0; }
 
 	virtual Form* translate(Vecteur2D vec);
 	virtual Form* homothety(double zoom, Vecteur2D center = Vecteur2D(0, 0));

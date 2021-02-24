@@ -143,7 +143,6 @@
     <ClInclude Include="Error.h" />
     <ClInclude Include="Form.h" />
     <ClInclude Include="GroupForm.h" />
-    <ClInclude Include="Marking.h" />
     <ClInclude Include="Polygon.h" />
     <ClInclude Include="PolygonConvex.h" />
     <ClInclude Include="VDraw.h" />
@@ -159,7 +158,6 @@
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="Form.cpp" />
     <ClCompile Include="GroupForm.cpp" />
-    <ClCompile Include="Marking.cpp" />
     <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="PolygonConvex.cpp" />
     <ClCompile Include="TDraw.cpp" />

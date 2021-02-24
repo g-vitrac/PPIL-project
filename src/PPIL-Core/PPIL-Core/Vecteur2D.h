@@ -23,13 +23,17 @@ public:
 	const Vecteur2D operator- () const { return Vecteur2D(-_posX, -_posY); }
 	const Vecteur2D operator- (const Vecteur2D& v) const { return *this + -v; }
 	const Vecteur2D operator/ (const double& d) const { return Vecteur2D(_posX / d, _posY / d); }
+	//const string operator+ (const string& s) const { return to_string(_posX) + "," + to_string(_posY); }
 
 	const double norm() const { return sqrt(*this * *this); }
 	const double distance(const Vecteur2D& v) const { return (*this - v).norm(); }
 	const double determinant(const Vecteur2D& v) const { return (_posX * v._posY) - (_posY * v._posX); }
 
+	//const string serialize() const { return to_string(_posX) + "," + to_string(_posY); }
+
 	operator string() const { ostringstream o; o << "Vecteur2D(" << _posX << "," << _posY << ")"; return o.str(); }
 };
 inline const Vecteur2D operator* (const double& d, const Vecteur2D& v) { return v * d; }
+//inline const string operator+ (const string& s, const Vecteur2D& v) { return v; }
 inline ostream& operator<<(ostream& o, const Vecteur2D& v) { return o << (string)v; }
 

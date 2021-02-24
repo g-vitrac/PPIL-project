@@ -5,27 +5,44 @@
 #include "Circle.h"
 
 int main() {
-	Vecteur2D A(0, 2), B(3, 4), C(7, 2);
+	try {
+		Vecteur2D A(0, 2), B(3, 4), C(7, 2);
 
-	Circle* cercleA = new Circle(A, 10.2, Form::RED);
-	//delete cercleA; fonctionne
-	Circle* cercleB = new Circle(B, 3.5, Form::BLACK);
-	//delete cercleB; fonctionne
-	Circle* cercleC = new Circle(C, 1.5, Form::BLACK);
+		Circle* cercleA = new Circle(A, 10.2, Form::RED);
+		//delete cercleA; fonctionne
+		Circle* cercleB = new Circle(B, 3.5, Form::BLACK);
+		//delete cercleB; fonctionne
+		Circle* cercleC = new Circle(C, 1.5, Form::BLACK);
 
-	GroupForm* subRootA = new GroupForm(cercleA);
-	GroupForm* subRootB = new GroupForm(cercleB);
-	GroupForm* subRootC = new GroupForm(cercleC);
+		GroupForm* subRootA = new GroupForm();
+		GroupForm* subRootB = new GroupForm();
+		GroupForm* root = new GroupForm();
 
-	vector<Form*> vecteurForm;
-	vecteurForm.push_back(subRootA);
-	vecteurForm.push_back(subRootB);
+		subRootA->insertChild(cercleA);
+		subRootA->insertChild(cercleB);
+		subRootB->insertChild(cercleC);
+		root->insertChild(subRootA);
+		root->insertChild(subRootB);
 
-	GroupForm* root = new GroupForm(vecteurForm);
-	root->insertGroup(subRootB);
-	cout << *root << endl;
+		GroupForm* root2 = (GroupForm*)root->clone();
+		((GroupForm*)root2->getChild(0))->removeChild(0);
+		root2->insertChild(root2);
+		cout << *root2 << endl;
 
-	root->removeGroup(subRootA);
-	root->removeGroup(subRootB);
-	cout << *root << endl;
+		//subRootA->removeChild(0);
+		//cout << *subRootA << endl;
+		//cout << *subRootA2 << endl;
+
+		exit(0);
+
+		//cout << *subRootA1 << endl;
+		//cout << *subRootA2 << endl;
+
+		//GroupForm* subRootA3 = subRootA2->insertChild(cercleA);
+		//GroupForm* subRootA4 = subRootA3->editNode(cercleC);
+
+	}
+	catch (Error const& err) {
+		cerr << err << endl;
+	}
 }

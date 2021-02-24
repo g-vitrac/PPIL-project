@@ -9,4 +9,7 @@ int main() {
 
 	Segment* seg = new Segment(A, B, Form::RED);
 	cout << *seg << endl;
+
+	Segment* seg2 = (Segment*)seg->clone();
+	cout << *seg2 << endl;
 }

@@ -1,17 +1,6 @@
 #include "Segment.h"
 #include "Visitor.h"
 
-/*
-Form* Segment::clone() const
-{
-    Segment * segment = new Segment(*this);
-    //Comment appeler le clone des Vecteur2Ds automatiquement ?
-    segment->_Vecteur2DA = (Vecteur2D*)this->_Vecteur2DA->clone();
-    segment->_Vecteur2DB = (Vecteur2D*)this->_Vecteur2DB->clone();
-    return segment;
-}
-*/
-
 void Segment::draw(Visitor* visitor)
 {
     visitor->draw(this);

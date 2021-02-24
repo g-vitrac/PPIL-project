@@ -2,6 +2,7 @@
 
 VDrawByJavaFX::VDrawByJavaFX(bool start)
 {
+    _sizeWindow = 400;
 	if (start) open();
 }
 
@@ -24,6 +25,17 @@ void VDrawByJavaFX::close()
     WSACleanup();
 }
 
+void VDrawByJavaFX::resize(const Form* form)
+{
+    _sizeWindow = form->calculateWindowSize(Vecteur2D(0,0)) + BORDER;
+    sendServer(_strdup(("Resize," + to_string(_sizeWindow) + "\n").c_str()));
+}
+
+void VDrawByJavaFX::clear()
+{
+    sendServer(_strdup("Clear\n"));
+}
+
 void VDrawByJavaFX::sendServer(const char* serializeMessage)
 {
     if (send(_socket, serializeMessage, strlen(serializeMessage), 0) < 0) throw Error("Erreur envoie du message");
@@ -32,19 +44,27 @@ void VDrawByJavaFX::sendServer(const char* serializeMessage)
 void VDrawByJavaFX::draw(Circle* circle)
 {
     string className = ("Circle");
-    string posX = to_string(circle->getCenter().getPosX());
-    string poxY = to_string(circle->getCenter().getPosY());
-    string radius = to_string(circle->getRadius());
+    cout << _sizeWindow << endl;
+    string posX = to_string((int)round(circle->getCenter().getPosX() + (_sizeWindow / 2)));
+    string poxY = to_string((int)round(circle->getCenter().getPosY() + (_sizeWindow / 2)));
+    string radius = to_string((int)round(circle->getRadius()));
     sendServer(_strdup((className + "," + posX + "," + poxY + "," + radius + "\n").c_str()));
 }
 
 void VDrawByJavaFX::draw(Segment* segment)
 {
     string className = ("Segment");
+    cout << _sizeWindow << endl;
+    string posX_A = to_string((int)round(segment->getVecA().getPosX() + (_sizeWindow / 2)));
+    string poxY_A = to_string((int)round(segment->getVecA().getPosY() + (_sizeWindow / 2)));
+    string posX_B = to_string((int)round(segment->getVecB().getPosX() + (_sizeWindow / 2)));
+    string poxY_B = to_string((int)round(segment->getVecB().getPosY() + (_sizeWindow / 2)));
+    /*
     string posX_A = to_string(segment->getVecA().getPosX());
     string poxY_A = to_string(segment->getVecA().getPosY());
     string posX_B = to_string(segment->getVecB().getPosX());
     string poxY_B = to_string(segment->getVecB().getPosY());
+    */
     sendServer(_strdup((className + "," + posX_A + "," + poxY_A + "," + posX_B + "," + poxY_B + "\n").c_str()));
 }
 
