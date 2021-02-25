@@ -1,8 +1,10 @@
 #include "VDrawByJavaFX.h"
 
+const Vector2D VDrawByJavaFX::ADDITIONAL_SIZE_WINDOW = Vector2D(16, 39);
+
 VDrawByJavaFX::VDrawByJavaFX(bool start)
 {
-    _sizeWindow = 400;
+    _socket = NULL;
 	if (start) open();
 }
 
@@ -16,6 +18,7 @@ void VDrawByJavaFX::open() {
     sin.sin_family = AF_INET;
     sin.sin_port = htons(9111);
     if (connect(_socket, (SOCKADDR*)&sin, sizeof(sin)) == SOCKET_ERROR) throw Error("Connexion au serveur impossible");
+    resize(_windowSize);
 }
 
 void VDrawByJavaFX::close()
@@ -25,10 +28,10 @@ void VDrawByJavaFX::close()
     WSACleanup();
 }
 
-void VDrawByJavaFX::resize(const Form* form)
+void VDrawByJavaFX::resize(const Vector2D& v)
 {
-    _sizeWindow = form->calculateWindowSize(Vecteur2D(0,0)) + BORDER;
-    sendServer(_strdup(("Resize," + to_string(_sizeWindow) + "\n").c_str()));
+    _windowSize = v;
+    sendServer(_strdup(("Resize," + (_windowSize + ADDITIONAL_SIZE_WINDOW).serialize() + "\n").c_str()));
 }
 
 void VDrawByJavaFX::clear()
@@ -41,33 +44,29 @@ void VDrawByJavaFX::sendServer(const char* serializeMessage)
     if (send(_socket, serializeMessage, strlen(serializeMessage), 0) < 0) throw Error("Erreur envoie du message");
 }
 
-void VDrawByJavaFX::draw(Circle* circle)
+void VDrawByJavaFX::draw(const Circle* circle, const string& color)
 {
-    string className = ("Circle");
-    cout << _sizeWindow << endl;
-    string posX = to_string((int)round(circle->getCenter().getPosX() + (_sizeWindow / 2)));
-    string poxY = to_string((int)round(circle->getCenter().getPosY() + (_sizeWindow / 2)));
-    string radius = to_string((int)round(circle->getRadius()));
-    sendServer(_strdup((className + "," + posX + "," + poxY + "," + radius + "\n").c_str()));
+    string className = "Circle";
+    string center = (circle->getCenter() + (_windowSize / 2)).serialize();
+    string radius = to_string(circle->getRadius());
+    sendServer(_strdup((className + "," + center + "," + radius + "," + color + "\n").c_str()));
 }
 
-void VDrawByJavaFX::draw(Segment* segment)
+void VDrawByJavaFX::draw(const Segment* segment, const string& color)
 {
-    string className = ("Segment");
-    cout << _sizeWindow << endl;
-    string posX_A = to_string((int)round(segment->getVecA().getPosX() + (_sizeWindow / 2)));
-    string poxY_A = to_string((int)round(segment->getVecA().getPosY() + (_sizeWindow / 2)));
-    string posX_B = to_string((int)round(segment->getVecB().getPosX() + (_sizeWindow / 2)));
-    string poxY_B = to_string((int)round(segment->getVecB().getPosY() + (_sizeWindow / 2)));
-    /*
-    string posX_A = to_string(segment->getVecA().getPosX());
-    string poxY_A = to_string(segment->getVecA().getPosY());
-    string posX_B = to_string(segment->getVecB().getPosX());
-    string poxY_B = to_string(segment->getVecB().getPosY());
-    */
-    sendServer(_strdup((className + "," + posX_A + "," + poxY_A + "," + posX_B + "," + poxY_B + "\n").c_str()));
+    string className = "Segment";
+    string vecA = (segment->getVecA() + (_windowSize / 2)).serialize();
+    string vecB = (segment->getVecB() + (_windowSize / 2)).serialize();
+    sendServer(_strdup((className + "," + vecA + "," + vecB + "," + color + "\n").c_str()));
 }
 
-void VDrawByJavaFX::draw(PolygonConvex* polygonConvex)
+void VDrawByJavaFX::draw(const PolygonConvex* polygonConvex, const string& color)
 {
+}
+
+void VDrawByJavaFX::draw(const GroupForm* groupForm, const string& color)
+{
+    for (int i = 0; i < groupForm->getChildsFormSize(); i++) {
+        groupForm->getChild(i)->draw(this, color);
+    }
 }

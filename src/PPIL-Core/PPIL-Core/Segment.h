@@ -1,28 +1,28 @@
 #pragma once
 #include "Form.h"
-#include "Vecteur2D.h"
+#include "Vector2D.h"
 
 class Segment : public Form
 {
-	Vecteur2D _vecA;
-	Vecteur2D _vecB;
+	Vector2D _vecA;
+	Vector2D _vecB;
 
 public:
-	explicit Segment(Vecteur2D VA, Vecteur2D VB, string color = BLACK) : _vecA(VA), _vecB(VB), Form(color) {}
+	explicit Segment(Vector2D VA, Vector2D VB, string color = BLACK) : _vecA(VA), _vecB(VB), Form(color) {}
 
-	const Vecteur2D getVecA() const { return _vecA; }
-	const Vecteur2D getVecB() const { return _vecB; }
+	const Vector2D getVecA() const { return _vecA; }
+	const Vector2D getVecB() const { return _vecB; }
 
 	virtual const double calculateArea() const { return 0; }
 	virtual const double calculatePerimeter() const { return 0; }
-	virtual const Vecteur2D calculateGravityVecteur2D() const { return (_vecA + _vecB) / 2; }
-	virtual const double calculateWindowSize(Vecteur2D centerWindow) const { return max(_vecA.distance(centerWindow), _vecB.distance(centerWindow)) * 2; }
+	virtual const Vector2D calculateGravityVector2D() const { return (_vecA + _vecB) / 2; }
+	virtual const Vector2D calculateWindowSize() const { return _vecA.maximum(_vecB) * 2; }
 
-	virtual void draw(Visitor* visitor);
+	virtual void draw(Visitor* visitor, const string& color) const;
 
-	virtual Form* translate(Vecteur2D vec) { return new Segment(_vecA + vec, _vecB + vec, _color); }
-	virtual Form* rotate(double degrees, Vecteur2D center = Vecteur2D(0, 0));
-	virtual Form* homothety(double zoom, Vecteur2D center = Vecteur2D(0, 0)) { return new Segment((_vecA * zoom) - center, (_vecB * zoom) - center, _color); }
+	virtual Form* translate(Vector2D vec) { return new Segment(_vecA + vec, _vecB + vec, _color); }
+	virtual Form* rotate(double degrees, Vector2D center = Vector2D(0, 0));
+	virtual Form* homothety(double zoom, Vector2D center = Vector2D(0, 0)) { return new Segment(((_vecA - center) * zoom) + center, ((_vecB - center) * zoom) + center); }
 
 	virtual Form* clone() const { return new Segment(*this); }
 

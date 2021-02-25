@@ -1,14 +1,6 @@
-- rename marking, vecteur2D
 - operator string all class
 - explicit construct simple
-- inline fonction simple
-- regex code couleur
-- groupForm, remplir les transformations
-- envoyer les couleurs (en gerant groupe forme) eclipse
-- revoir cercle en faite -> le cercle doit coller le bord
-- serialise avec paramètre windowSize
+- revoir World
 
 //Late
 - revoir envoie des données -> faire + simple
-- operator = pour cloner sinon ne clone pas
-- operator = pour les transformations

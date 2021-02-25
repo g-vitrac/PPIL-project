@@ -2,8 +2,6 @@ package draw.form;
 
 import draw.DrawDetector;
 import draw.DrawScene;
-import javafx.application.Platform;
-import javafx.scene.shape.Line;
 
 public class DSegment extends DrawDetector {
 

@@ -1,10 +1,7 @@
 package draw.form;
 
-import java.awt.geom.Ellipse2D;
-
 import draw.DrawDetector;
 import draw.DrawScene;
-import javafx.application.Platform;
 
 public class DClear extends DrawDetector {
 
@@ -17,8 +14,6 @@ public class DClear extends DrawDetector {
 
 	@Override
 	public void draw(String[] form, DrawScene scene) {
-		Platform.runLater(() -> {
-			scene.pane.getChildren().clear();
-		});
+		scene.pane.getChildren().clear();
 	}
 }

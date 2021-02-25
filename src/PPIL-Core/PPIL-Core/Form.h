@@ -1,6 +1,5 @@
 #pragma once
-#include "Marking.h"
-#include "Vecteur2D.h"
+#include "Vector2D.h"
 #include "Error.h"
 
 #include <iostream>
@@ -8,6 +7,7 @@
 #include <string>
 #include <math.h> 
 #include <vector>
+#include <regex>
 
 using namespace std;
 
@@ -16,36 +16,34 @@ class Form
 {
 protected:
 	string _color;
-	//Marking _anchorMarking;
 
 public:
 	Form* _parentForm; //??????
-	const double M_PI = 3.14159265358979323846;
+	static const double M_PI;
 	static const string BLACK;
 	static const string BLUE;
 	static const string RED;
 	static const string GREEN;
 	static const string YELLOW;
 	static const string CYAN;
-	//static const string BLACK = string("#000000");
 
-	explicit Form(string color = BLACK) : _color(color), _parentForm(NULL) {}
+	explicit Form(string color = BLACK) : _color(color), _parentForm(NULL) { if (!regex_match(color.c_str(), regex("^#?[0-9a-fA-F]{6}$"))) throw Error("Form : web color doesn't exist"); }
 
 	const string getColor() const { return _color; };
 
 	virtual const double calculateArea() const = 0;
 	virtual const double calculatePerimeter() const = 0;
-	virtual const Vecteur2D calculateGravityVecteur2D() const = 0;
-	virtual const double calculateWindowSize(Vecteur2D centerWindow) const = 0;
+	virtual const Vector2D calculateGravityVector2D() const = 0;
+	virtual const Vector2D calculateWindowSize() const = 0;
 
-	virtual Form* translate(Vecteur2D vec) = 0;
-	virtual Form* rotate(double degrees, Vecteur2D center = Vecteur2D(0,0)) = 0;
-	virtual Form* homothety(double zoom, Vecteur2D center = Vecteur2D(0,0)) = 0;
+	virtual Form* translate(Vector2D vec) = 0;
+	virtual Form* rotate(double degrees, Vector2D center = Vector2D(0,0)) = 0;
+	virtual Form* homothety(double zoom, Vector2D center = Vector2D(0,0)) = 0;
 
 	virtual Form* clone() const = 0;
 
-	//virtual const string serialize() const = 0;
-	virtual void draw(Visitor* visitor) = 0;
+	//virtual const string serialize(Vector2D origin) const = 0;
+	virtual void draw(Visitor* visitor, const string& color) const = 0;
 
 	virtual ostream& display(ostream& o) const;
 	friend ostream& operator<<(ostream& o, const Form& f) { return f.display(o); }

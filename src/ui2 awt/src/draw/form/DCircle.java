@@ -1,10 +1,5 @@
 package draw.form;
 
-import java.awt.Graphics;
-
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-
 import draw.DrawDetector;
 import draw.DrawScene;
 

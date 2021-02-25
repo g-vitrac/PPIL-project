@@ -147,7 +147,7 @@
     <ClInclude Include="PolygonConvex.h" />
     <ClInclude Include="VDraw.h" />
     <ClInclude Include="VDrawByJavaFX.h" />
-    <ClInclude Include="Vecteur2D.h" />
+    <ClInclude Include="Vector2D.h" />
     <ClInclude Include="PolygonRegular.h" />
     <ClInclude Include="Segment.h" />
     <ClInclude Include="Visitor.h" />

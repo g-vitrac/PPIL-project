@@ -3,19 +3,14 @@
 #include "Circle.h"
 #include "Segment.h"
 #include "PolygonConvex.h"
+#include "GroupForm.h"
 
 class Visitor
 {
 public:
 	//Draw
-	virtual void draw(Circle* circle) = 0;
-	virtual void draw(Segment* segment) = 0;
-	virtual void draw(PolygonConvex* polygonConvex) = 0;
-
-	//Transform
-	/* ?????,
-	virtual void translate(Circle* circle) = 0;
-	virtual void rotate(Circle* circle) = 0;
-	virtual void homothety(Circle* circle) = 0;
-	*/
+	virtual void draw(const Circle* circle, const string& color) = 0;
+	virtual void draw(const Segment* segment, const string& color) = 0;
+	virtual void draw(const PolygonConvex* polygonConvex, const string& color) = 0;
+	virtual void draw(const GroupForm* groupForm, const string& color) = 0;
 };

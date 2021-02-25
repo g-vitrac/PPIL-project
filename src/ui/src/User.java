@@ -3,22 +3,11 @@ import java.net.*;
 
 import draw.Draw;
 import draw.DrawScene;
-import draw.DrawSceneBuilder;
 import draw.form.DCircle;
 import draw.form.DClear;
 import draw.form.DResize;
 import draw.form.DSegment;
-import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.beans.Observable;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableStringValue;
-import javafx.beans.value.ObservableValue;
-import javafx.concurrent.Service;
-import javafx.concurrent.Task;
-import javafx.stage.Stage;
 
 import java.io.*;
 
@@ -39,14 +28,8 @@ public class User extends Thread {
         drawForm.addDetector(new DSegment());
         drawForm.addDetector(new DResize());
         drawForm.addDetector(new DClear());
-        
-        scene = new DrawScene();
-        
-        //DrawSceneBuilder builder = new DrawSceneBuilder();
-        //Platform.runLater(builder);
-        //System.err.println("Avant join");
-        //scene = builder.scene;
-        //System.err.println(scene);
+                
+        scene = new DrawSceneBuilder().scene;
     }
     
 	@Override
@@ -57,7 +40,9 @@ public class User extends Thread {
 			  while ((line = fluxIn.readLine()) != null) {
 				  String[] form = line.split(",");
 				  System.out.println(line);
-				  drawForm.draw(form, scene);
+				  Platform.runLater(()->{
+					  drawForm.draw(form, scene);
+				  });
 			  }
 
 		  }

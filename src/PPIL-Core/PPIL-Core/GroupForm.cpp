@@ -33,59 +33,67 @@ const double GroupForm::calculatePerimeter() const
 	return sum;
 }
 
-const Vecteur2D GroupForm::calculateGravityVecteur2D() const
+const Vector2D GroupForm::calculateGravityVector2D() const
 {
 	int size = _childsForm.size();
 	if (size > 0) {
-		Vecteur2D r(0, 0);
+		Vector2D r(0,0);
 		for (int i = 0; i < size; i++) {
-			r = r + _childsForm[i]->calculateGravityVecteur2D();
+			r = r + _childsForm[i]->calculateGravityVector2D();
 		}
 		return r / size;
 	}
-	throw Error("calculateGravityVecteur2D : childsForm empty");
+	throw Error("calculateGravityVector2D : childsForm empty");
 }
 
-const double GroupForm::calculateWindowSize(Vecteur2D centerWindow) const
+const Vector2D GroupForm::calculateWindowSize() const
 {
-	return 0.0;
-}
-
-Form* GroupForm::translate(Vecteur2D vec)
-{
-	for (unsigned int i = 0; i < _childsForm.size(); i++) {
-		_childsForm[i]->translate(vec);
+	Vector2D sizeMax = _childsForm[0]->calculateWindowSize();
+	for (unsigned int i = 1; i < _childsForm.size(); i++) {
+		sizeMax = sizeMax.maximum(_childsForm[i]->calculateWindowSize());
 	}
-	return NULL;
+	return sizeMax;
 }
 
-Form* GroupForm::rotate(double degrees, Vecteur2D center)
+Form* GroupForm::translate(Vector2D vec)
 {
-	return nullptr;
-}
-
-Form* GroupForm::homothety(double zoom, Vecteur2D center)
-{
+	GroupForm* groupForm = new GroupForm(_color);
 	for (unsigned int i = 0; i < _childsForm.size(); i++) {
-		_childsForm[i]->homothety(zoom, center);
+		groupForm->insertChild(_childsForm[i]->translate(vec));
 	}
-	return NULL;
+	return groupForm;
+}
+
+Form* GroupForm::rotate(double degrees, Vector2D center)
+{
+	GroupForm* groupForm = new GroupForm(_color);
+	for (unsigned int i = 0; i < _childsForm.size(); i++) {
+		groupForm->insertChild(_childsForm[i]->rotate(degrees, center));
+	}
+	return groupForm;
+}
+
+Form* GroupForm::homothety(double zoom, Vector2D center)
+{
+	GroupForm* groupForm = new GroupForm(_color);
+	for (unsigned int i = 0; i < _childsForm.size(); i++) {
+		groupForm->insertChild(_childsForm[i]->homothety(zoom, center));
+	}
+	return groupForm;
 }
 
 Form* GroupForm::clone() const
 {
-	GroupForm* groupForm = new GroupForm();
+	GroupForm* groupForm = new GroupForm(_color);
 	for (unsigned int i = 0; i < _childsForm.size(); i++) {
 		groupForm->insertChild(_childsForm[i]->clone());
 	}
 	return groupForm;
 }
 
-void GroupForm::draw(Visitor* visitor)
+void GroupForm::draw(Visitor* visitor, const string& color) const
 {
-	for (unsigned int i = 0; i < _childsForm.size(); i++) {
-		_childsForm[i]->draw(visitor);
-	}
+	visitor->draw(this, color);
 }
 
 void GroupForm::insertChild(Form* form)

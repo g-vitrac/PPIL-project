@@ -1,12 +1,13 @@
-- Rotation, 0 -> chiffre decimal complexe
 - Qt -> comment inclure sans créer un projet Qt ?
 - Pas de matrice pour rotation
 - static string pour les couleurs 
 - comment je peux créer une instance de polygon avec transformation ??????????????????????????????????????????????????????????,
-- translation sur la figure root, aucun difference, grave ou pas ?
 - si on part du principe qu'une fenetre = un root, javafx uniquement des formes de même couleurs, normal ?
-- creer uniquement les vecteur en int ? 
 - insert/remove/edit -> crée un autre arbre
 - identifiant formes dans eclipses ?
+- avertissement unsigned
+- draw visitor avec paramètre couleur / same pour serialize
+- discuter du resize()
+- *center = *center->blabla ? perte de mémoire ?
 
 

@@ -1,5 +1,4 @@
 
-
 import draw.DrawScene;
 import javafx.application.Platform;
 

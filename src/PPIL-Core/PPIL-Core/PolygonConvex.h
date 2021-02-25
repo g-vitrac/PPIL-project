@@ -5,7 +5,7 @@ class PolygonConvex : public Polygon
 {
 public:
 	PolygonConvex(string color = BLACK) : Polygon(color) {}
-	PolygonConvex(vector<Vecteur2D> formVecteur2D, string color = BLACK) : Polygon(formVecteur2D, color) {}
+	PolygonConvex(vector<Vector2D> formVector2D, string color = BLACK) : Polygon(formVector2D, color) {}
 
 	virtual const double calculateArea() const;
 

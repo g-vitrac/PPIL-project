@@ -5,18 +5,20 @@
 
 int main() {
 	Vecteur2D A(2, 2), B(2, -2), C(-2, -2), D(-2, 2), tr(1, 3);
-	vector<Vecteur2D> vec;
-	vec.push_back(A); vec.push_back(B); vec.push_back(C); vec.push_back(D);
 	Segment * S = new Segment(A, B);
-	PolygonConvex * P = new PolygonConvex(vec);
+	Segment* S2 = new Segment(C, D);
 
-	GroupForm* subRootA = new GroupForm(S);
-	GroupForm* subRootB = new GroupForm(P);
+	GroupForm* subRootA = new GroupForm();
+	GroupForm* subRootB = new GroupForm();
+	subRootA->insertChild(S);
+	subRootB->insertChild(S2);
 
-	GroupForm* root = new GroupForm(subRootA);
-	root->insertGroup(subRootB);
+	GroupForm* root = new GroupForm();
+	root->insertChild(subRootA);
+	root->insertChild(subRootB);
 	cout << *root << endl;
 
-	root->translate(tr);
-	cout << *root << endl;
+	cout << "apres tr" << endl;
+	Form* rootTr = root->translate(tr);
+	cout << *rootTr << endl;
 }

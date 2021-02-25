@@ -1,6 +1,6 @@
 #include "Polygon.h"
 
-Polygon::Polygon(vector<Vecteur2D> formVecteur2D, string color) : Form(color)
+Polygon::Polygon(vector<Vector2D> formVecteur2D, string color) : Form(color)
 {
 	if (formVecteur2D.size() > 2) {
 		for (unsigned int i = 0; i < formVecteur2D.size(); i++) {
@@ -21,24 +21,24 @@ const double Polygon::calculatePerimeter() const
 	return perimeter;
 }
 
-Vecteur2D const Polygon::calculateGravityVecteur2D() const
+Vector2D const Polygon::calculateGravityVector2D() const
 {
 	int size = _formVecteur2D.size();
 	if (size > 0) {
-		Vecteur2D r(0, 0);
+		Vector2D r(0, 0);
 		for (int i = 0; i < size; i++) {
 			r = r + _formVecteur2D[i];
 		}
 		return r / size;
 	}
 	else {
-		throw Error("calculateGravityVecteur2D : collection size <= 0");
+		throw Error("calculateGravityVector2D : collection size <= 0");
 	}
 }
 
-Form* Polygon::translate(Vecteur2D vec)
+Form* Polygon::translate(Vector2D vec)
 {
-	vector<Vecteur2D> formReturn;
+	vector<Vector2D> formReturn;
 	for (unsigned int i = 0; i < _formVecteur2D.size(); i++) {
 		formReturn.push_back(_formVecteur2D[i] + vec);
 	}
@@ -46,7 +46,7 @@ Form* Polygon::translate(Vecteur2D vec)
 	//return new Polygon(formReturn, _color);
 }
 
-Form* Polygon::homothety(double zoom, Vecteur2D center)
+Form* Polygon::homothety(double zoom, Vector2D center)
 {
 	for (unsigned int i = 0; i < _formVecteur2D.size(); i++) {
 		_formVecteur2D[i] = (_formVecteur2D[i] * zoom) - center;

@@ -42,9 +42,6 @@
     <ClInclude Include="GroupForm.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Vecteur2D.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Form.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -68,6 +65,9 @@
     </ClInclude>
     <ClInclude Include="Error.h">
       <Filter>Fichiers d%27en-tête\error</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
