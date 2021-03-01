@@ -11,7 +11,9 @@
 
 using namespace std;
 
-class Visitor;
+class VDraw;
+class VSave;
+class VRead;
 class Form
 {
 protected:
@@ -43,9 +45,10 @@ public:
 	virtual Form* clone() const = 0;
 
 	//virtual const string serialize(Vector2D origin) const = 0;
-	virtual void draw(Visitor* visitor, const string& color) const = 0;
+	virtual void draw(VDraw* visitor, const string& color) const = 0;
+	virtual void save(VSave* visitor) const = 0;
 
-	virtual ostream& display(ostream& o) const;
-	friend ostream& operator<<(ostream& o, const Form& f) { return f.display(o); }
+	virtual operator string() const { ostringstream o; o << "Form (color = " << _color << ", area = " << calculateArea() << ", perimeter = " << calculatePerimeter() << ", gravity = " << calculateGravityVector2D() << ")"; return o.str(); }
+	friend ostream& operator<<(ostream& o, const Form& f) { return o << (string)f; }
 };
 

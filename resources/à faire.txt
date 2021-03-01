@@ -1,6 +1,3 @@
-- operator string all class
 - explicit construct simple
 - revoir World
-
-//Late
-- revoir envoie des données -> faire + simple
+- detected -> mettre tout dans une list puis voir au cas par cas

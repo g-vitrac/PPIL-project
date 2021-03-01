@@ -9,8 +9,8 @@ public:
 
 	virtual const double calculateArea() const;
 
-	virtual void draw(Visitor* visitor);
+	virtual void draw(VDraw* visitor);
 
-	virtual ostream& display(ostream& o) const;
+	virtual operator string() const { ostringstream o; o << "PolygonConvex (" << Polygon::operator string() << ")"; return o.str(); }
 };
 

@@ -18,7 +18,6 @@ public:
 	virtual const double calculatePerimeter() const { return 2 * M_PI * _radius; }
 	virtual const Vector2D calculateGravityVector2D() const { return _center; }
 	virtual const Vector2D calculateWindowSize() const { return (_center + _radius) * 2; }
-	//virtual Form* clone() const;
 
 	virtual Form* translate(Vector2D vec) { return new Circle(_center + vec, _radius, _color); }
 	virtual Form* rotate(double degrees, Vector2D center = Vector2D(0, 0));
@@ -26,9 +25,9 @@ public:
 
 	virtual Form* clone() const { return new Circle(*this); }
 
-	//virtual const string serialize() const { return _center.serialize() + "," + to_string(_radius); }
-	virtual void draw(Visitor* visitor, const string& color) const;
+	virtual void draw(VDraw* visitor, const string& color) const;
+	virtual void save(VSave* visitor) const;
 
-	virtual ostream& display(ostream& o) const;
+	virtual operator string() const { ostringstream o; o << "Circle (" << Form::operator string() << "\n         center = " << _center << "\n         radius = " << _radius << ")"; return o.str(); }
 };
 

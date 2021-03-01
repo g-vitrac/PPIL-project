@@ -2,12 +2,6 @@
 
 const Vector2D VDrawByJavaFX::ADDITIONAL_SIZE_WINDOW = Vector2D(16, 39);
 
-VDrawByJavaFX::VDrawByJavaFX(bool start)
-{
-    _socket = NULL;
-	if (start) open();
-}
-
 void VDrawByJavaFX::open() {
     WSADATA WSAData;
     SOCKADDR_IN sin;
@@ -41,7 +35,7 @@ void VDrawByJavaFX::clear()
 
 void VDrawByJavaFX::sendServer(const char* serializeMessage)
 {
-    if (send(_socket, serializeMessage, strlen(serializeMessage), 0) < 0) throw Error("Erreur envoie du message");
+    if (send(_socket, serializeMessage, (int)strlen(serializeMessage), 0) < 0) throw Error("Erreur envoie du message");
 }
 
 void VDrawByJavaFX::draw(const Circle* circle, const string& color)

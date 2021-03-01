@@ -1,0 +1,330 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.28.29337.0"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "\"D:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX86\\x64\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x0052B1D0 -il C:\\Users\\loick\\AppData\\Local\\Temp\\_CL_4377009aast -typedil -f Form.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1928 -D_MSC_FULL_VER=192829337 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GR -D_CPPRTTI -nologo -W 3 -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -Ot -DCODE_ANALYSIS -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -EHs -D_CPPUNWIND -EHc -D__MSVC_RUNTIME_CHECKS -RTCs -RTCu -MDd -D_DEBUG -D_MT -D_DLL -GS -D_M_FP_PRECISE -permissive- -Zc:wchar_t -Zc:forScope -Fox64\\Debug\\Form.obj -Fdx64\\Debug\\vc142.pdb -Gd -analyze:projectdirectory D:\\Users\\loick\\Documents\\PPIL-project\\src\\PPIL-Core\\PPIL-Core -analyze:rulesetdirectory ;D:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset D:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\Rule Sets\\NativeRecommendedRules.ruleset -analyze:quiet -analyze:plugin D:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I D:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\include -I D:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\atlmfc\\include -I D:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -I D:\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt -I D:\\Windows Kits\\10\\Include\\10.0.18362.0\\um -I D:\\Windows Kits\\10\\Include\\10.0.18362.0\\shared -I D:\\Windows Kits\\10\\Include\\10.0.18362.0\\winrt -I D:\\Windows Kits\\10\\Include\\10.0.18362.0\\cppwinrt -I D:\\Users\\loick\\Documents\\PPIL-project\\src\\PPIL-Core\\PPIL-Core\\Include\\um",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/world.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/world.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/form.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vector2d.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/error.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vsavebytxt.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vsavebytxt.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vsave.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/circle.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/segment.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/polygonconvex.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/polygon.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/groupform.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vreaddetector.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vreaddetector.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/detector.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vreadbytxt.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vreadbytxt.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vread.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/txtcircle.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/txtsegment.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/txtgroupform.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vread.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/segment.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vdraw.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/polygonregular.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/polygonregular.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vecteur2d.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vdrawbyjavafx.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/vdrawbyjavafx.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/txtsegment.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/txtgroupform.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/txtcircle.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/tread.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///D:/Users/loick/Documents/PPIL-project/src/PPIL-Core/PPIL-Core/PolygonConvex.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///D:/Users/loick/Documents/PPIL-project/src/PPIL-Core/PPIL-Core/Polygon.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/groupform.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///d:/users/loick/documents/ppil-project/src/ppil-core/ppil-core/form.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -22,11 +22,38 @@
     <Filter Include="Fichiers sources\visitor">
       <UniqueIdentifier>{af7ec27e-91c7-4f22-bc52-5275eeb74d9b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\error">
-      <UniqueIdentifier>{d56205e0-de81-4d27-b012-c0e312ff5543}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers sources\test">
       <UniqueIdentifier>{cb2f69e4-fe2c-44eb-8555-ae95d1cdbf48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\visitor\draw">
+      <UniqueIdentifier>{9d75f769-7a2a-4dff-b9c7-d5c1d53e3665}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\visitor\save">
+      <UniqueIdentifier>{d7f000f7-1419-4928-bd52-4c352b5c7d24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\visitor\draw">
+      <UniqueIdentifier>{ceb33e46-8591-40cc-937d-c67ad0f8d0de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\visitor\save">
+      <UniqueIdentifier>{2ad34eae-a68f-4d6f-859d-ffd197babce2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\visitor\read">
+      <UniqueIdentifier>{2b52dc4a-07a3-4a30-9ba4-48d05337c597}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\visitor\read">
+      <UniqueIdentifier>{8533c83b-6c28-437b-837c-3574284f6036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\visitor\read\readByTxt">
+      <UniqueIdentifier>{b9aade3a-794d-4de0-87dd-8c8610dd7f9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\visitor\read\readByTxt">
+      <UniqueIdentifier>{9913f0e3-49a9-4971-bfa0-7f9684b9285a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\visitor\read\readByTxt\expert">
+      <UniqueIdentifier>{0e721f43-bcc9-48bb-8fb6-2f910aaaafc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\visitor\read\readByTxt\expert">
+      <UniqueIdentifier>{b5eab7ae-1018-4b22-8282-e02dc3f531d6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,20 +81,44 @@
     <ClInclude Include="Polygon.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="VDraw.h">
-      <Filter>Fichiers d%27en-tête\visitor</Filter>
-    </ClInclude>
-    <ClInclude Include="VDrawByJavaFX.h">
-      <Filter>Fichiers d%27en-tête\visitor</Filter>
-    </ClInclude>
-    <ClInclude Include="Visitor.h">
-      <Filter>Fichiers d%27en-tête\visitor</Filter>
-    </ClInclude>
     <ClInclude Include="Error.h">
       <Filter>Fichiers d%27en-tête\error</Filter>
     </ClInclude>
     <ClInclude Include="Vector2D.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="VDrawByJavaFX.h">
+      <Filter>Fichiers d%27en-tête\visitor\draw</Filter>
+    </ClInclude>
+    <ClInclude Include="VDraw.h">
+      <Filter>Fichiers d%27en-tête\visitor\draw</Filter>
+    </ClInclude>
+    <ClInclude Include="VSave.h">
+      <Filter>Fichiers d%27en-tête\visitor\save</Filter>
+    </ClInclude>
+    <ClInclude Include="VSaveByTxt.h">
+      <Filter>Fichiers d%27en-tête\visitor\save</Filter>
+    </ClInclude>
+    <ClInclude Include="VRead.h">
+      <Filter>Fichiers d%27en-tête\visitor\read</Filter>
+    </ClInclude>
+    <ClInclude Include="VReadByTxt.h">
+      <Filter>Fichiers d%27en-tête\visitor\read\readByTxt</Filter>
+    </ClInclude>
+    <ClInclude Include="VReadDetector.h">
+      <Filter>Fichiers d%27en-tête\visitor\read</Filter>
+    </ClInclude>
+    <ClInclude Include="Detector.h">
+      <Filter>Fichiers d%27en-tête\visitor\read</Filter>
+    </ClInclude>
+    <ClInclude Include="TxtCircle.h">
+      <Filter>Fichiers d%27en-tête\visitor\read\readByTxt\expert</Filter>
+    </ClInclude>
+    <ClInclude Include="TxtSegment.h">
+      <Filter>Fichiers d%27en-tête\visitor\read\readByTxt\expert</Filter>
+    </ClInclude>
+    <ClInclude Include="TxtGroupForm.h">
+      <Filter>Fichiers d%27en-tête\visitor\read\readByTxt\expert</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -99,12 +150,30 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="VDrawByJavaFX.cpp">
-      <Filter>Fichiers sources\visitor</Filter>
+      <Filter>Fichiers sources\visitor\draw</Filter>
     </ClCompile>
-    <ClCompile Include="Error.cpp">
-      <Filter>Fichiers sources\error</Filter>
+    <ClCompile Include="VSaveByTxt.cpp">
+      <Filter>Fichiers sources\visitor\save</Filter>
     </ClCompile>
-    <ClCompile Include="TDraw.cpp">
+    <ClCompile Include="VReadDetector.cpp">
+      <Filter>Fichiers sources\visitor\read</Filter>
+    </ClCompile>
+    <ClCompile Include="VReadByTxt.cpp">
+      <Filter>Fichiers sources\visitor\read\readByTxt</Filter>
+    </ClCompile>
+    <ClCompile Include="TxtCircle.cpp">
+      <Filter>Fichiers sources\visitor\read\readByTxt\expert</Filter>
+    </ClCompile>
+    <ClCompile Include="TxtSegment.cpp">
+      <Filter>Fichiers sources\visitor\read\readByTxt\expert</Filter>
+    </ClCompile>
+    <ClCompile Include="TxtGroupForm.cpp">
+      <Filter>Fichiers sources\visitor\read\readByTxt\expert</Filter>
+    </ClCompile>
+    <ClCompile Include="VRead.cpp">
+      <Filter>Fichiers sources\visitor\read</Filter>
+    </ClCompile>
+    <ClCompile Include="TRead.cpp">
       <Filter>Fichiers sources\test</Filter>
     </ClCompile>
   </ItemGroup>

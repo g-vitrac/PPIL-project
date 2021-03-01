@@ -10,7 +10,7 @@ public:
 	GroupForm(string color = BLACK) : Form(color) {}
 	~GroupForm();
 
-	const int getChildsFormSize() const { return _childsForm.size(); }
+	const size_t getChildsFormSize() const { return _childsForm.size(); }
 	const Form* getChild(int index) const;
 
 	virtual const double calculateArea() const;
@@ -28,7 +28,8 @@ public:
 
 	virtual Form* clone() const;
 
-	virtual void draw(Visitor* visitor, const string& color) const;
+	virtual void draw(VDraw* visitor, const string& color) const;
+	virtual void save(VSave* visitor) const;
 
-	virtual ostream& display(ostream& o) const;
+	virtual operator string() const;
 };

@@ -1,5 +1,9 @@
-#include "Visitor.h"
-class VDraw : public Visitor
+#include "Circle.h"
+#include "Segment.h"
+#include "PolygonConvex.h"
+#include "GroupForm.h"
+
+class VDraw
 {
 protected:
 	Vector2D _windowSize = Vector2D(1300, 800); //default size of window

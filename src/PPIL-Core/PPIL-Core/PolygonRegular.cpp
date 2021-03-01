@@ -8,14 +8,3 @@ PolygonRegular::PolygonRegular(Vector2D centerVecteur2D, double radius, int numb
 		_formVecteur2D.push_back(Vector2D(0, 0));
 	}
 }
-
-PolygonRegular::~PolygonRegular()
-{
-}
-
-ostream& PolygonRegular::display(ostream& o) const
-{
-	o << "PolygonRegular (";
-	PolygonConvex::display(o);
-	return o << ")";
-}

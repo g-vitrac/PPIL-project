@@ -1,5 +1,7 @@
 package draw;
 
+import draw.cor.DrawDetector;
+
 public class Draw {
 	private DrawDetector cor;
 	
@@ -8,8 +10,8 @@ public class Draw {
 	}
 	
 	public void addDetector(DrawDetector d) {
-        assert d != null : "Detector is null";
-        d.setSuivant(cor);
+        assert d != null : "addDetector : detector is null";
+        d.setNext(cor);
         cor = d;
     }
 }

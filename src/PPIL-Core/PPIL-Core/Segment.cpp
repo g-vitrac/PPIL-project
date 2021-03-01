@@ -1,10 +1,7 @@
 #include "Segment.h"
-#include "Visitor.h"
-
-void Segment::draw(Visitor* visitor, const string& color) const
-{
-    visitor->draw(this, color);
-}
+#include "VDraw.h"
+#include "VSave.h"
+#include "VRead.h"
 
 Form* Segment::rotate(double degrees, Vector2D center)
 {
@@ -18,12 +15,12 @@ Form* Segment::rotate(double degrees, Vector2D center)
     return new Segment(A + center, B + center, _color);
 }
 
-
-ostream& Segment::display(ostream& o) const
+void Segment::draw(VDraw* visitor, const string& color) const
 {
-    o << "Segment (";
-    Form::display(o);
-    o << "\n         - " << _vecA;
-    o << "\n         - " << _vecB;
-    return o << ")";
+    visitor->draw(this, color);
+}
+
+void Segment::save(VSave* visitor) const
+{
+    visitor->save(this);
 }

@@ -18,14 +18,15 @@ public:
 	virtual const Vector2D calculateGravityVector2D() const { return (_vecA + _vecB) / 2; }
 	virtual const Vector2D calculateWindowSize() const { return _vecA.maximum(_vecB) * 2; }
 
-	virtual void draw(Visitor* visitor, const string& color) const;
-
 	virtual Form* translate(Vector2D vec) { return new Segment(_vecA + vec, _vecB + vec, _color); }
 	virtual Form* rotate(double degrees, Vector2D center = Vector2D(0, 0));
 	virtual Form* homothety(double zoom, Vector2D center = Vector2D(0, 0)) { return new Segment(((_vecA - center) * zoom) + center, ((_vecB - center) * zoom) + center); }
 
 	virtual Form* clone() const { return new Segment(*this); }
 
-	virtual ostream& display(ostream& o) const;
+	virtual void draw(VDraw* visitor, const string& color) const;
+	virtual void save(VSave* visitor) const;
+
+	virtual operator string() const { ostringstream o; o << "Segment (" << Form::operator string() << "\n         vector 1 = " << _vecA << "\n         vector 2 = " << _vecB << ")"; return o.str(); }
 };
 

@@ -17,6 +17,6 @@ public:
 	virtual Form* translate(Vector2D vec);
 	virtual Form* homothety(double zoom, Vector2D center = Vector2D(0, 0));
 
-	virtual ostream& display(ostream& o) const;
+	virtual operator string() const;
 };
 

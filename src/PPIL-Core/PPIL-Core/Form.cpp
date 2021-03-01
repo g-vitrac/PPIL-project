@@ -7,10 +7,3 @@ const string Form::RED = "#FE0001";
 const string Form::GREEN = "#0C9026";
 const string Form::YELLOW = "#BFED00";
 const string Form::CYAN = "#22FDF5";
-
-ostream& Form::display(ostream& o) const
-{
-    o << "Form (";
-    o << "\n     color = " << _color << ", area = " << calculateArea() << ", perimeter = " << calculatePerimeter() << ", gravity Vector2D = " << calculateGravityVector2D();
-    return o << ")";
-}

@@ -1,5 +1,7 @@
 #include "GroupForm.h"
-#include "Visitor.h"
+#include "VDraw.h"
+#include "VSave.h"
+#include "Vread.h"
 
 GroupForm::~GroupForm()
 {
@@ -35,13 +37,13 @@ const double GroupForm::calculatePerimeter() const
 
 const Vector2D GroupForm::calculateGravityVector2D() const
 {
-	int size = _childsForm.size();
+	size_t size = _childsForm.size();
 	if (size > 0) {
 		Vector2D r(0,0);
 		for (int i = 0; i < size; i++) {
 			r = r + _childsForm[i]->calculateGravityVector2D();
 		}
-		return r / size;
+		return r / (double)size;
 	}
 	throw Error("calculateGravityVector2D : childsForm empty");
 }
@@ -91,9 +93,14 @@ Form* GroupForm::clone() const
 	return groupForm;
 }
 
-void GroupForm::draw(Visitor* visitor, const string& color) const
+void GroupForm::draw(VDraw* visitor, const string& color) const
 {
 	visitor->draw(this, color);
+}
+
+void GroupForm::save(VSave* visitor) const
+{
+	visitor->save(this);
 }
 
 void GroupForm::insertChild(Form* form)
@@ -115,9 +122,9 @@ void GroupForm::removeChild(int index)
 	throw Error("removeChild : index overflow");
 	*/
 
-	int size = _childsForm.size();
+	size_t size = _childsForm.size();
 	if (index < size && index >= 0) {
-		delete (_childsForm[index]);
+		delete _childsForm[index];
 		_childsForm.erase(_childsForm.begin() + index);
 	}
 	else throw Error("removeChild : index overflow");
@@ -154,13 +161,12 @@ void GroupForm::replaceNode(Form* form)
 	*/
 }
 
-ostream& GroupForm::display(ostream& o) const
+GroupForm::operator string() const
 {
-	o << "GroupForm (";
-	Form::display(o);
+	ostringstream o; o << "GroupForm (" << Form::operator string();
 	for (unsigned int i = 0; i < _childsForm.size(); i++) {
-		o << "\nForm " << i + 1 << " = ";
-		_childsForm[i]->display(o);
+		o << "\n      child " << i + 1 << " = " << *_childsForm[i];
 	}
-	return o << ")";
+	o << ")";
+	return o.str();
 }

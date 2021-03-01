@@ -6,10 +6,6 @@
 int main() {
 	try {
 		VDrawByJavaFX* visitorJavaFX = new VDrawByJavaFX(true);
-		Circle* cercleA = new Circle(Vector2D(50, 50), 100, "1aEaBa");
-		visitorJavaFX->resize(cercleA->calculateWindowSize());
-		cercleA->draw(visitorJavaFX, cercleA->getColor());
-		/*
 		Vector2D A(0, 0), B(-100, 200), C(200, 200), D(-70, -83);
 		Circle* cercleA = new Circle(A, 50, "1aEaBa");
 		Circle* cercleB = new Circle(D, 30, "1aEaBa");
@@ -69,7 +65,6 @@ int main() {
 			root->draw(visitorJavaFX, root->getColor());
 			center->draw(visitorJavaFX, center->getColor());
 		}
-		*/
 		visitorJavaFX->close();
 	}
 	catch (Error const& err) {

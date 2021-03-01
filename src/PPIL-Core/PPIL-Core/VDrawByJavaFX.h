@@ -11,7 +11,7 @@ private:
 	SOCKET _socket;
 
 public:
-	explicit VDrawByJavaFX(bool start = false);
+	VDrawByJavaFX(bool start = false) { _socket = NULL; if (start) open(); }
 	virtual void open();
 	virtual void close();
 	virtual void resize(const Vector2D& v);

@@ -1,5 +1,7 @@
 #include "Circle.h"
-#include "Visitor.h"
+#include "VDraw.h"
+#include "VSave.h"
+#include "VRead.h"
 
 Form* Circle::rotate(double degrees, Vector2D center)
 {
@@ -11,15 +13,12 @@ Form* Circle::rotate(double degrees, Vector2D center)
 	return new Circle(A + center, _radius, _color);
 }
 
-void Circle::draw(Visitor* visitor, const string& color) const
+void Circle::draw(VDraw* visitor, const string& color) const
 {
 	visitor->draw(this, color);
 }
 
-ostream& Circle::display(ostream& o) const
+void Circle::save(VSave* visitor) const
 {
-	o << "Circle (";
-	Form::display(o);
-	o << "\n         - " << _center;
-	return o << "\n      radius = " << _radius << ", area = " << calculateArea() << ", perimeter = " << calculatePerimeter() << ")";
+	visitor->save(this);
 }

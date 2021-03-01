@@ -140,31 +140,45 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="Detector.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="Form.h" />
     <ClInclude Include="GroupForm.h" />
     <ClInclude Include="Polygon.h" />
     <ClInclude Include="PolygonConvex.h" />
+    <ClInclude Include="TxtCircle.h" />
+    <ClInclude Include="TxtGroupForm.h" />
+    <ClInclude Include="TxtSegment.h" />
+    <ClInclude Include="VReadDetector.h" />
     <ClInclude Include="VDraw.h" />
     <ClInclude Include="VDrawByJavaFX.h" />
+    <ClInclude Include="VRead.h" />
+    <ClInclude Include="VReadByTxt.h" />
+    <ClInclude Include="VSaveByTxt.h" />
     <ClInclude Include="Vector2D.h" />
     <ClInclude Include="PolygonRegular.h" />
     <ClInclude Include="Segment.h" />
-    <ClInclude Include="Visitor.h" />
+    <ClInclude Include="VSave.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
-    <ClCompile Include="Error.cpp" />
     <ClCompile Include="Form.cpp" />
     <ClCompile Include="GroupForm.cpp" />
     <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="PolygonConvex.cpp" />
-    <ClCompile Include="TDraw.cpp" />
+    <ClCompile Include="TRead.cpp" />
+    <ClCompile Include="TxtCircle.cpp" />
+    <ClCompile Include="TxtGroupForm.cpp" />
+    <ClCompile Include="TxtSegment.cpp" />
     <ClCompile Include="VDrawByJavaFX.cpp" />
     <ClCompile Include="Vecteur2D.cpp" />
     <ClCompile Include="PolygonRegular.cpp" />
     <ClCompile Include="Segment.cpp" />
+    <ClCompile Include="VRead.cpp" />
+    <ClCompile Include="VReadByTxt.cpp" />
+    <ClCompile Include="VReadDetector.cpp" />
+    <ClCompile Include="VSaveByTxt.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

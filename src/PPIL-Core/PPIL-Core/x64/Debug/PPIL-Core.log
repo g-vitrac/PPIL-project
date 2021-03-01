@@ -1,4 +1,2 @@
-﻿  VDrawByJavaFX.cpp
-D:\Users\loick\Documents\PPIL-project\src\PPIL-Core\PPIL-Core\GroupForm.h(13,38): warning C4267: 'return' : conversion de 'size_t' en 'const int', perte possible de données
-D:\Users\loick\Documents\PPIL-project\src\PPIL-Core\PPIL-Core\VDrawByJavaFX.cpp(44,8): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+﻿  TRead.cpp
   PPIL-Core.vcxproj -> D:\Users\loick\Documents\PPIL-project\src\PPIL-Core\x64\Debug\PPIL-Core.exe

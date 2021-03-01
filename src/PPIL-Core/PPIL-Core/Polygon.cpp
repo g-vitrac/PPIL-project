@@ -23,13 +23,13 @@ const double Polygon::calculatePerimeter() const
 
 Vector2D const Polygon::calculateGravityVector2D() const
 {
-	int size = _formVecteur2D.size();
+	size_t size = _formVecteur2D.size();
 	if (size > 0) {
 		Vector2D r(0, 0);
 		for (int i = 0; i < size; i++) {
 			r = r + _formVecteur2D[i];
 		}
-		return r / size;
+		return r / (double)size;
 	}
 	else {
 		throw Error("calculateGravityVector2D : collection size <= 0");
@@ -54,12 +54,12 @@ Form* Polygon::homothety(double zoom, Vector2D center)
 	return NULL; //Juste infame...
 }
 
-ostream& Polygon::display(ostream& o) const
+Polygon::operator string() const
 {
-	o << "Polygon (";
-	Form::display(o);
+	ostringstream o; o << "Polygon (" << Form::operator string();
 	for (unsigned int i = 0; i < _formVecteur2D.size(); i++) {
-		o << "\n         - " << _formVecteur2D[i];
+		o << "\n         vector " << i + 1 << " = " << _formVecteur2D[i] << "\n";
 	}
-	return o << ")";
+	o << ")";
+	return o.str();
 }
