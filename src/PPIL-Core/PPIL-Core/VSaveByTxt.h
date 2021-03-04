@@ -11,6 +11,6 @@ public:
 
 	virtual void save(const Circle* circle);
 	virtual void save(const Segment* segment);
-	virtual void save(const PolygonConvex* polygonConvex);
+	virtual void save(const Polygon* polygon);
 	virtual void save(const GroupForm* groupForm);
 };

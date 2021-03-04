@@ -1,7 +1,7 @@
 #include "PolygonRegular.h"
 
 
-PolygonRegular::PolygonRegular(Vector2D centerVecteur2D, double radius, int numberSide, string color) : PolygonConvex(color)
+PolygonRegular::PolygonRegular(const Vector2D& centerVecteur2D, const double& radius, int numberSide, const Color& color) : PolygonConvex(color)
 {
 	//TODO, Comment faire ?
 	for (int i = 0; i < numberSide; i++) {

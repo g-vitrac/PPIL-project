@@ -1,6 +1,4 @@
-#include "TxtCircle.h"
-#include "TxtSegment.h"
-#include "TxtGroupForm.h"
+#include "InitializeCor.h"
 
 class VRead
 {

@@ -140,10 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
-    <ClInclude Include="Detector.h" />
+    <ClInclude Include="Color.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="Form.h" />
     <ClInclude Include="GroupForm.h" />
+    <ClInclude Include="InitializeCor.h" />
+    <ClInclude Include="InitializeSocket.h" />
+    <ClInclude Include="Matrix22.h" />
     <ClInclude Include="Polygon.h" />
     <ClInclude Include="PolygonConvex.h" />
     <ClInclude Include="TxtCircle.h" />
@@ -159,15 +162,18 @@
     <ClInclude Include="PolygonRegular.h" />
     <ClInclude Include="Segment.h" />
     <ClInclude Include="VSave.h" />
-    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="Color.cpp" />
     <ClCompile Include="Form.cpp" />
     <ClCompile Include="GroupForm.cpp" />
+    <ClCompile Include="InitializeCor.cpp" />
+    <ClCompile Include="InitializeSocket.cpp" />
+    <ClCompile Include="Matrix22.cpp" />
     <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="PolygonConvex.cpp" />
-    <ClCompile Include="TRead.cpp" />
+    <ClCompile Include="TDraw.cpp" />
     <ClCompile Include="TxtCircle.cpp" />
     <ClCompile Include="TxtGroupForm.cpp" />
     <ClCompile Include="TxtSegment.cpp" />
@@ -179,7 +185,6 @@
     <ClCompile Include="VReadByTxt.cpp" />
     <ClCompile Include="VReadDetector.cpp" />
     <ClCompile Include="VSaveByTxt.cpp" />
-    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

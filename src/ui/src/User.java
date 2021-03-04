@@ -5,6 +5,7 @@ import draw.Draw;
 import draw.DrawScene;
 import draw.cor.expert.DCircle;
 import draw.cor.expert.DClear;
+import draw.cor.expert.DPolygon;
 import draw.cor.expert.DResize;
 import draw.cor.expert.DSegment;
 import javafx.application.Platform;
@@ -25,6 +26,7 @@ public class User extends Thread {
         
         drawForm.addDetector(new DCircle());
         drawForm.addDetector(new DSegment());
+        drawForm.addDetector(new DPolygon());
         drawForm.addDetector(new DResize());
         drawForm.addDetector(new DClear());
                 
@@ -43,7 +45,6 @@ public class User extends Thread {
 					  drawForm.draw(form, scene);
 				  });
 			  }
-
 		  }
 		  catch (IOException e) { 
 			  	System.err.println("Un problème est survenu sur le serveur\n"+e);

@@ -1,7 +1,6 @@
 #include "GroupForm.h"
 #include "VDraw.h"
 #include "VSave.h"
-#include "Vread.h"
 
 GroupForm::~GroupForm()
 {
@@ -57,31 +56,25 @@ const Vector2D GroupForm::calculateWindowSize() const
 	return sizeMax;
 }
 
-Form* GroupForm::translate(Vector2D vec)
+void GroupForm::translate(const Vector2D& vec)
 {
-	GroupForm* groupForm = new GroupForm(_color);
 	for (unsigned int i = 0; i < _childsForm.size(); i++) {
-		groupForm->insertChild(_childsForm[i]->translate(vec));
+		_childsForm[i]->translate(vec);
 	}
-	return groupForm;
 }
 
-Form* GroupForm::rotate(double degrees, Vector2D center)
+void GroupForm::rotate(const double& degrees, const Vector2D& center)
 {
-	GroupForm* groupForm = new GroupForm(_color);
 	for (unsigned int i = 0; i < _childsForm.size(); i++) {
-		groupForm->insertChild(_childsForm[i]->rotate(degrees, center));
+		_childsForm[i]->rotate(degrees, center);
 	}
-	return groupForm;
 }
 
-Form* GroupForm::homothety(double zoom, Vector2D center)
+void GroupForm::homothety(const double& zoom, const Vector2D& center)
 {
-	GroupForm* groupForm = new GroupForm(_color);
 	for (unsigned int i = 0; i < _childsForm.size(); i++) {
-		groupForm->insertChild(_childsForm[i]->homothety(zoom, center));
+		_childsForm[i]->homothety(zoom, center);
 	}
-	return groupForm;
 }
 
 Form* GroupForm::clone() const
@@ -93,7 +86,7 @@ Form* GroupForm::clone() const
 	return groupForm;
 }
 
-void GroupForm::draw(VDraw* visitor, const string& color) const
+void GroupForm::draw(const VDraw* visitor, const string& color) const
 {
 	visitor->draw(this, color);
 }

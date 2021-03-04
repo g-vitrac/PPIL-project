@@ -12,8 +12,8 @@ public:
 	virtual void open() = 0;
 	virtual void close() = 0;
 
-	virtual void draw(const Circle* circle, const string& color) = 0;
-	virtual void draw(const Segment* segment, const string& color) = 0;
-	virtual void draw(const PolygonConvex* polygonConvex, const string& color) = 0;
-	virtual void draw(const GroupForm* groupForm, const string& color) = 0;
+	virtual void draw(const Circle* circle, const string& color) const = 0;
+	virtual void draw(const Segment* segment, const string& color) const = 0;
+	virtual void draw(const PolygonConvex* polygon, const string& color) const = 0;
+	virtual void draw(const GroupForm* groupForm, const string& color) const = 0;
 };

@@ -23,12 +23,8 @@ vector<Form*> VReadByTxt::read(const string& file)
 Form* VReadByTxt::parse(string line)
 {
 	if (!_fs.is_open()) throw Error("file isn't open");
-	VReadDetector* rCircle, * rSegment, * rGroupForm;
-	rCircle = new TxtCircle(NULL);
-	rSegment = new TxtSegment(rCircle);
-	rGroupForm = new TxtGroupForm(rSegment);
 
-	Detector* detector = rGroupForm;
+	const VReadDetector* detector = InitializeCor::getInstance().getDetectorRead();
 
 	return detector->detector(line);
 }

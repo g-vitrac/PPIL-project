@@ -1,14 +1,13 @@
 GroupForm|#CE0DC0
 GroupForm|#000000
 Circle|0.000000,0.000000|50.000000|1aEaBa
-yolo
 endGroupForm
 GroupForm|#FE0001
-je suis la pour rien
 Segment|-100.000000,200.000000|200.000000,200.000000|#BFED00
 Circle|-70.000000,-83.000000|30.000000|1aEaBa
 endGroupForm
 endGroupForm
-Circle|-40.000000,-83.000000|30.000000|1aEaBa
-bonjour ?
-Oui allo ?
+GroupForm|#FE0001
+Segment|-100.000000,200.000000|200.000000,200.000000|#BFED00
+Circle|-70.000000,-83.000000|30.000000|1aEaBa
+endGroupForm

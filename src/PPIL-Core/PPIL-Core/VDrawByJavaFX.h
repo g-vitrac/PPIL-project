@@ -1,5 +1,4 @@
 #include "VDraw.h"
-#include <winsock2.h>
 #include <WS2tcpip.h>
 #pragma comment(lib, "ws2_32.lib")
 
@@ -16,10 +15,10 @@ public:
 	virtual void close();
 	virtual void resize(const Vector2D& v);
 	virtual void clear();
-	virtual void sendServer(const char* serializeMessage);
+	virtual void sendServer(const char* serializeMessage) const;
 
-	virtual void draw(const Circle* circle, const string& color);
-	virtual void draw(const Segment* segment, const string& color);
-	virtual void draw(const PolygonConvex* polygonConvex, const string& color);
-	virtual void draw(const GroupForm* groupForm, const string& color);
+	virtual void draw(const Circle* circle, const string& color) const;
+	virtual void draw(const Segment* segment, const string& color) const;
+	virtual void draw(const PolygonConvex* polygon, const string& color) const;
+	virtual void draw(const GroupForm* groupForm, const string& color) const;
 };

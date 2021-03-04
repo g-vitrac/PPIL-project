@@ -21,6 +21,7 @@ int main() {
 		rootForm->insertChild(subRootB);
 
 		rootForm->save(visitorDrawText);
+		subRootB->save(visitorDrawText);
 		//visitorDrawText->clear();
 		visitorDrawText->close();
 

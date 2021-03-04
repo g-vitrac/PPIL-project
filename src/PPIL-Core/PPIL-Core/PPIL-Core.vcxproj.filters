@@ -55,6 +55,12 @@
     <Filter Include="Fichiers sources\visitor\read\readByTxt\expert">
       <UniqueIdentifier>{b5eab7ae-1018-4b22-8282-e02dc3f531d6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\singleton">
+      <UniqueIdentifier>{6761fa4a-e8fd-481f-9a8f-2df946c70503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\singleton">
+      <UniqueIdentifier>{0f1bddf8-289e-46b0-a9d1-978871e8265d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Segment.h">
@@ -70,9 +76,6 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Form.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="World.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="PolygonConvex.h">
@@ -108,9 +111,6 @@
     <ClInclude Include="VReadDetector.h">
       <Filter>Fichiers d%27en-tête\visitor\read</Filter>
     </ClInclude>
-    <ClInclude Include="Detector.h">
-      <Filter>Fichiers d%27en-tête\visitor\read</Filter>
-    </ClInclude>
     <ClInclude Include="TxtCircle.h">
       <Filter>Fichiers d%27en-tête\visitor\read\readByTxt\expert</Filter>
     </ClInclude>
@@ -119,6 +119,18 @@
     </ClInclude>
     <ClInclude Include="TxtGroupForm.h">
       <Filter>Fichiers d%27en-tête\visitor\read\readByTxt\expert</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix22.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="InitializeSocket.h">
+      <Filter>Fichiers d%27en-tête\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="InitializeCor.h">
+      <Filter>Fichiers d%27en-tête\singleton</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -138,9 +150,6 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Form.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="World.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="PolygonConvex.cpp">
@@ -173,8 +182,20 @@
     <ClCompile Include="VRead.cpp">
       <Filter>Fichiers sources\visitor\read</Filter>
     </ClCompile>
-    <ClCompile Include="TRead.cpp">
+    <ClCompile Include="Color.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix22.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="TDraw.cpp">
       <Filter>Fichiers sources\test</Filter>
+    </ClCompile>
+    <ClCompile Include="InitializeSocket.cpp">
+      <Filter>Fichiers sources\singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="InitializeCor.cpp">
+      <Filter>Fichiers sources\singleton</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
