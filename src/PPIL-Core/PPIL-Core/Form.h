@@ -21,7 +21,6 @@ protected:
 public:
 	Form* _parentForm; //??????
 	static const double M_PI;
-
 	explicit Form(const Color& color) : _color(color), _parentForm(NULL) {}
 
 	const Color& getColor() const { return _color; };

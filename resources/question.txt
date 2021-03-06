@@ -1,17 +1,9 @@
-- Pas de matrice pour rotation
-- static string pour les couleurs 
-- comment je peux créer une instance de polygon avec transformation ??????????????????????????????????????????????????????????,
-- insert/remove/edit -> crée un autre arbre
-- identifiant formes dans eclipses ?
-- convertion size_t en int
-- draw visitor avec paramètre couleur / same pour serialize
-- discuter du resize()
-- *center = *center->blabla ? perte de mémoire ? surdefinir = pour delete l'anienne valeur ?
-- class singleton pour serveur ?
 - voir le read/save
-- delete cor read
-
-//LATER
-- Qt -> comment inclure sans créer un projet Qt ?
+- resize() dans draw() ?
+- v1 = v2+= v3 non detecté / root = root->transform() marche pas
+- faut-il verfifer que polygon = bien convex ?
+- Polygon dans draw bug completement imcomprehensible
+- delete cor
+- draw abstract dans Polygon ou ou pas ?
 
 

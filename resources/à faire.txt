@@ -1,3 +1,12 @@
-- explicit construct simple
-- revoir World
-- detected -> mettre tout dans une list puis voir au cas par cas
+- explicit constructeur
+- inline
+- faire les commentaires pour docu
+- ajouter les nouvelles formes
+- delete cor read
+- UML
+
+//AVANT DE RENDRE
+- Faire le rapport
+- Nettoyer projet (.cpp/.h inutile, ce doc)
+- Faire un README
+- creer javadoc, c++doc
