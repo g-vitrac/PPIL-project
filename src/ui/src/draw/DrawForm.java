@@ -2,7 +2,7 @@ package draw;
 
 import draw.cor.DrawDetector;
 
-public class Draw {
+public class DrawForm {
 	private DrawDetector cor;
 	
 	public void draw(String[] form, DrawScene scene) {			

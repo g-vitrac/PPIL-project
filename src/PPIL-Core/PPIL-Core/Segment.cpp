@@ -10,9 +10,9 @@ Form* Segment::rotate(double degrees, Vector2D center)
 
 void Segment::rotate(const double& radian, const Vector2D& center)
 {
-    Matrix22 matrice = Matrix22(cos(radian), -sin(radian), sin(radian), cos(radian));
-    _vecA = (matrice * (_vecA - center)) + center;
-    _vecB = (matrice * (_vecB - center)) + center;
+    Matrix22 matrix(radian);
+    _vecA = (matrix * (_vecA - center)) + center;
+    _vecB = (matrix * (_vecB - center)) + center;
 }
 
 void Segment::draw(const VDraw* visitor, const string& color) const

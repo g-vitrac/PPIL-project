@@ -2,9 +2,6 @@
 #include "VReadDetector.h"
 #include "Circle.h"
 
-/**
- * @brief The expert that detects circles
-*/
 class TxtCircle : public VReadDetector {
 public:
 	TxtCircle(VReadDetector* next) : VReadDetector(next) {}

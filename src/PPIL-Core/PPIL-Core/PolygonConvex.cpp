@@ -1,4 +1,5 @@
 #include "PolygonConvex.h"
+#include "VSave.h"
 
 const double PolygonConvex::calculateArea() const
 {
@@ -11,8 +12,8 @@ const double PolygonConvex::calculateArea() const
 	}
 	return area;
 }
-#include "VDraw.h"
-void PolygonConvex::draw(const VDraw* visitor, const string& color) const
+
+void PolygonConvex::save(VSave* visitor) const
 {
-	visitor->draw(this, color);
+	visitor->save(this);
 }

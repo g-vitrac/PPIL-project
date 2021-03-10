@@ -1,9 +1,6 @@
 #pragma once
 #include "Form.h"
 
-/**
- * @brief Model of the circle
-*/
 class Circle : public Form
 {
 private:
@@ -40,7 +37,7 @@ public:
 	 * @brief Calculate the size of the window needed to show the entire circle
 	 * @return The size of the window needed to show the entire circle 
 	*/
-	virtual const Vector2D calculateWindowSize() const { return (_center + _radius) * 2; }
+	virtual const Vector2D calculateWindowSize() const { return (_center + _radius * Vector2D(1,1)) * 2; }
 
 	/**
 	 * @brief Translate the circle

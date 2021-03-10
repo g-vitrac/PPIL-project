@@ -9,7 +9,7 @@ public class DPolygon extends DrawDetector {
 
 	@Override
 	public boolean detected(String form, DrawScene scene) {
-		if (form.equalsIgnoreCase("Polygon"))
+		if (form.equalsIgnoreCase("PolygonG"))
 			return true;
 		return false;
 	}

@@ -1,6 +1,8 @@
 #include "Circle.h"
 #include "Segment.h"
-#include "Polygon.h"
+#include "PolygonConvex.h"
+#include "PolygonRegular.h"
+#include "Triangle.h"
 #include "GroupForm.h"
 #include <fstream>
 
@@ -12,6 +14,8 @@ public:
 
 	virtual void save(const Circle* circle) = 0;
 	virtual void save(const Segment* segment) = 0;
-	virtual void save(const Polygon* polygon) = 0;
+	virtual void save(const PolygonConvex* polygonConvex) = 0;
+	virtual void save(const PolygonRegular* polygonRegular) = 0;
+	virtual void save(const Triangle* triangle) = 0;
 	virtual void save(const GroupForm* groupForm) = 0;
 };

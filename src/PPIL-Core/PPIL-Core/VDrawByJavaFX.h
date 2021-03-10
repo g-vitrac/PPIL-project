@@ -2,9 +2,6 @@
 #include <WS2tcpip.h>
 #pragma comment(lib, "ws2_32.lib")
 
-/**
- * @brief the implementation of the vdraw for the javafx server
-*/
 class VDrawByJavaFX : public VDraw
 {
 private:
@@ -22,6 +19,6 @@ public:
 
 	virtual void draw(const Circle* circle, const string& color) const;
 	virtual void draw(const Segment* segment, const string& color) const;
-	virtual void draw(const PolygonConvex* polygon, const string& color) const;
+	virtual void draw(const PolygonG* polygonG, const string& color) const;
 	virtual void draw(const GroupForm* groupForm, const string& color) const;
 };

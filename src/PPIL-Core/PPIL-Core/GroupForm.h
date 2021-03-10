@@ -1,24 +1,16 @@
 #pragma once
 #include "Form.h"
 
-/**
- * @brief This class makes possible the creation of group of form
- */
 class GroupForm : public Form
 {
 private:
-	/**
-	 * @brief A vector of child that belongs to the group of form
-	*/
-	vector<Form*> _childsForm; 
+	vector<Form*> _childsForm;
 
 public:
 	GroupForm(const Color& color = Color()) : Form(color) {}
 	~GroupForm();
 
-	
 	const size_t getChildsFormSize() const { return _childsForm.size(); }
-
 	const Form* getChild(int index) const;
 
 	virtual const double calculateArea() const;
@@ -28,11 +20,6 @@ public:
 
 	void insertChild(Form* form);
 	void removeChild(int index);
-
-	/**
-	 * @brief Replace the node that is used in the tree that host all the other form / group of form
-	 * @param form The form that will replace the current "father" of this group of form
-	*/
 	void replaceNode(Form* form);
 
 	virtual void translate(const Vector2D& vec);

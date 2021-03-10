@@ -4,32 +4,22 @@
 #include <sstream>
 #include <string>
 
+#include "Vector2D.h"
+
 using namespace std;
 
-/**
- * @brief Matrix that is used to rotates the different form
-*/
 class Matrix22
 {
 private:
-	/**
-	 * @brief The matrix used to complete the different calcul
-	*/
-	vector<vector<double>> _matrix;
+	Vector2D _lineTop;
+	Vector2D _lineBottom;
 
 public:
+	Matrix22(const double& radian) { _lineTop = Vector2D(cos(radian), -sin(radian)); _lineBottom = Vector2D(sin(radian), cos(radian)); }
+	Matrix22(const Vector2D& lineTop, const Vector2D& lineBottom) : _lineTop(lineTop), _lineBottom(lineBottom) {}
 
-	/**
-	 * @brief Constructor of the Matrix22 class
-	 * @param x1 X coordinate of the first vector used in the rotation
-	 * @param x2 X coordinate of the second vector used in the rotation
-	 * @param y1 Y coordinate of the first vector used in the rotation
-	 * @param y2 Y coordinate of the second vector used in the rotation
-	*/
-	Matrix22(const double& x1, const double& x2, const double& y1, const double& y2);
+	const Vector2D operator* (const Vector2D& v) const { return Vector2D(_lineTop * v, _lineBottom * v); }
 
-	const vector<vector<double>> getMatrix() const { return _matrix; }
-
-	operator string() const { ostringstream o; o << "Matrix ([" << _matrix[0][0] << "," << _matrix[0][1] << "][" << _matrix[1][0] << "," << _matrix[1][1] << "])"; return o.str(); }
+	operator string() const { ostringstream o; o << "Matrix ([" << _lineTop << "][" << _lineBottom << "])"; return o.str(); }
 };
 

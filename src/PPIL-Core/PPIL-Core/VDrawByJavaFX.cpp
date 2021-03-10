@@ -38,7 +38,7 @@ void VDrawByJavaFX::sendServer(const char* serializeMessage) const
 void VDrawByJavaFX::draw(const Circle* circle, const string& color) const
 {
     string className = "Circle";
-    string center = (circle->getCenter().centerVector2D(_windowSize));
+    string center = (circle->getCenter().center(_windowSize).serialize());
     string radius = to_string(circle->getRadius());
     sendServer((className + "," + center + "," + radius + "," + color + "\n").c_str());
 }
@@ -46,17 +46,15 @@ void VDrawByJavaFX::draw(const Circle* circle, const string& color) const
 void VDrawByJavaFX::draw(const Segment* segment, const string& color) const
 {
     string className = "Segment";
-    string vecA = (segment->getVecA().centerVector2D(_windowSize));
-    string vecB = (segment->getVecB().centerVector2D(_windowSize));
+    string vecA = (segment->getVecA().center(_windowSize).serialize());
+    string vecB = (segment->getVecB().center(_windowSize).serialize());
     sendServer((className + "," + vecA + "," + vecB + "," + color + "\n").c_str());
 }
 
-void VDrawByJavaFX::draw(const PolygonConvex* polygon, const string& color) const
+void VDrawByJavaFX::draw(const PolygonG* polygonG, const string& color) const
 {
-    string result = "Polygon";   
-    for (int i = 0; i < polygon->getChildsFormVecteur2D(); i++) {
-        result += "," + polygon->getPoint(i).centerVector2D(_windowSize);
-    }
+    vector<Vector2D> vectors = centerVectors2D(polygonG->getFormVecteur2D(), _windowSize);
+    string result = "PolygonG," + serializeVectors2D(vectors, string(","));   
     sendServer((result + "," + color + "\n").c_str());
 }
 

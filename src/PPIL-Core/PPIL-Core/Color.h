@@ -1,14 +1,12 @@
-#pragma once
-#include "Error.h"
+#pragma 
 #include <string>
 #include <sstream>
 #include <regex>
 
+#include "Error.h"
+
 using namespace std;
 
-/**
- * @brief The classed used to represent the different color
-*/
 class Color
 {
 private:

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -147,11 +147,15 @@
     <ClInclude Include="InitializeCor.h" />
     <ClInclude Include="InitializeSocket.h" />
     <ClInclude Include="Matrix22.h" />
-    <ClInclude Include="Polygon.h" />
+    <ClInclude Include="PolygonG.h" />
     <ClInclude Include="PolygonConvex.h" />
+    <ClInclude Include="Triangle.h" />
     <ClInclude Include="TxtCircle.h" />
     <ClInclude Include="TxtGroupForm.h" />
+    <ClInclude Include="TxtPolygonConvex.h" />
+    <ClInclude Include="TxtPolygonRegular.h" />
     <ClInclude Include="TxtSegment.h" />
+    <ClInclude Include="TxtTriangle.h" />
     <ClInclude Include="VReadDetector.h" />
     <ClInclude Include="VDraw.h" />
     <ClInclude Include="VDrawByJavaFX.h" />
@@ -171,12 +175,16 @@
     <ClCompile Include="InitializeCor.cpp" />
     <ClCompile Include="InitializeSocket.cpp" />
     <ClCompile Include="Matrix22.cpp" />
-    <ClCompile Include="Polygon.cpp" />
+    <ClCompile Include="PolygonG.cpp" />
     <ClCompile Include="PolygonConvex.cpp" />
     <ClCompile Include="TDraw.cpp" />
+    <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="TxtCircle.cpp" />
     <ClCompile Include="TxtGroupForm.cpp" />
+    <ClCompile Include="TxtPolygonConvex.cpp" />
+    <ClCompile Include="TxtPolygonRegular.cpp" />
     <ClCompile Include="TxtSegment.cpp" />
+    <ClCompile Include="TxtTriangle.cpp" />
     <ClCompile Include="VDrawByJavaFX.cpp" />
     <ClCompile Include="Vecteur2D.cpp" />
     <ClCompile Include="PolygonRegular.cpp" />

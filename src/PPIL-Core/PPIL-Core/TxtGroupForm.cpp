@@ -3,15 +3,12 @@
 
 Form* TxtGroupForm::detected(string line) const
 {
-    size_t pos = 0;
-
     //On récupère le nom de classe
-    pos = line.find("|");
-    if (line.substr(0, pos) != "GroupForm") return NULL;
-    line.erase(0, pos + string("|").length());
+    string delimiter = "|";
+    if (parseParameter(line, delimiter) != "GroupForm") return NULL;
 
     //On récupère la couleur
-    string color = line;
+    string color = parseParameter(line, delimiter);
 
     VReadByTxt* visitorDrawText = new VReadByTxt();
     GroupForm* result = new GroupForm(color);
@@ -23,5 +20,6 @@ Form* TxtGroupForm::detected(string line) const
         if (childResult) result->insertChild(childResult);
         if (!getline(VRead::_fs, line)) throw Error("detected : file is corrupt");
     } 
+    delete visitorDrawText;
     return result;
 }

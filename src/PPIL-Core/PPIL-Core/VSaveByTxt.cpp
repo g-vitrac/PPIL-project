@@ -21,8 +21,19 @@ void VSaveByTxt::save(const Segment* segment)
 	_fs << "Segment|" + segment->getVecA().serialize() + "|" + segment->getVecB().serialize() + "|" + segment->getColor().getCode() + "\n";
 }
 
-void VSaveByTxt::save(const Polygon* polygon)
+void VSaveByTxt::save(const PolygonConvex* polygonConvex)
 {
+	_fs << "PolygonConvex|" + serializeVectors2D(polygonConvex->getFormVecteur2D(), string("|")) + "|" + polygonConvex->getColor().getCode() + "\n";
+}
+
+void VSaveByTxt::save(const PolygonRegular* polygonRegular)
+{
+	_fs << "PolygonRegular|" + serializeVectors2D(polygonRegular->getFormVecteur2D(), string("|")) + "|" + polygonRegular->getColor().getCode() + "\n";
+}
+
+void VSaveByTxt::save(const Triangle* triangle)
+{
+	_fs << "Triangle|" + serializeVectors2D(triangle->getFormVecteur2D(), string("|")) + "|" + triangle->getColor().getCode() + "\n";
 }
 
 void VSaveByTxt::save(const GroupForm* groupForm)

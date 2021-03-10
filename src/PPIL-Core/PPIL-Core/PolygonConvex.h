@@ -1,21 +1,18 @@
 #pragma once
-#include "Polygon.h"
+#include "PolygonG.h"
 
-/**
- * @brief Model of a convex polygon
-*/
-class PolygonConvex : public Polygon
+class PolygonConvex : public PolygonG
 {
 public:
-	PolygonConvex(const Color& color = Color()) : Polygon(color) {}
-	PolygonConvex(vector<Vector2D> formVector2D, const Color& color = Color()) : Polygon(formVector2D, color) {}
+	PolygonConvex(const Color& color = Color()) : PolygonG(color) {}
+	PolygonConvex(vector<Vector2D> formVector2D, const Color& color = Color()) : PolygonG(formVector2D, color) {}
 
 	virtual const double calculateArea() const;
 
 	virtual Form* clone() const { return new PolygonConvex(*this); }
 
-	virtual void draw(const VDraw* visitor, const string& color) const;
+	virtual void save(VSave* visitor) const;
 
-	virtual operator string() const { ostringstream o; o << "PolygonConvex (" << Polygon::operator string() << ")"; return o.str(); }
+	virtual operator string() const { ostringstream o; o << "PolygonConvex (" << PolygonG::operator string() << ")"; return o.str(); }
 };
 

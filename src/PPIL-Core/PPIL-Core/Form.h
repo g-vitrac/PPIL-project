@@ -1,13 +1,14 @@
 #pragma once
-#include "Vector2D.h"
-#include "Error.h"
-#include "Color.h"
-
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <math.h> 
 #include <vector>
+
+#include "Vector2D.h"
+#include "Matrix22.h"
+#include "Error.h"
+#include "Color.h"
 
 using namespace std;
 
@@ -72,9 +73,9 @@ public:
 	 * @param center The focal point of the homothety
 	*/
 	virtual void homothety(const double& zoom, const Vector2D& center = Vector2D()) = 0;
-	Form* translate(const Vector2D& vec) const { Form * clone = this->clone(); clone->translate(vec); return clone; }
-	Form* rotate(const double& radian, const Vector2D& center) const { Form* clone = this->clone(); clone->rotate(radian, center); return clone; }
-	Form* homothety(const double& zoom, const Vector2D& center) const { Form* clone = this->clone(); clone->homothety(zoom, center); return clone; }
+	Form* translateClone(const Vector2D& vec) const { Form * clone = this->clone(); clone->translate(vec); return clone; }
+	Form* rotateClone(const double& radian, const Vector2D& center) const { Form* clone = this->clone(); clone->rotate(radian, center); return clone; }
+	Form* homothetyClone(const double& zoom, const Vector2D& center) const { Form* clone = this->clone(); clone->homothety(zoom, center); return clone; }
 
 	/**
 	 * @brief Clone the form

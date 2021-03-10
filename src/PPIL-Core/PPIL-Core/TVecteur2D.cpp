@@ -28,11 +28,26 @@ int main() {
 	{
 		Vector2D v1(3,2), v2(7,4), v3, vtest;
 		//v1 += 3;
-		//v3 = (v1 += v2);
+		v3 = (v1 += v2);
 		v1 += v2;
-		//v3 = (v1 += v2);
+		v1 += v2;
 		cout << v1 << endl;
 		cout << v2 << endl;
+		(v1 += v2) = v3;
+		
+
+		int a, b, c;
+		a = 2;
+		b = 5;
+		a += b;
+		cout << "a = " << a << endl;
+		cout << "b = " << b << endl;
+		c = a += b;
+		cout << "a = " << a << endl;
+		cout << "b = " << b << endl;
+		cout << "c = " << c << endl;
+		(a += b) = 3; //Absurde
+		cout << a << endl;
 	}
 	{
 		

@@ -4,24 +4,17 @@
 #include "VReadDetector.h"
 #include "TxtCircle.h"
 #include "TxtSegment.h"
+#include "TxtPolygonConvex.h"
+#include "TxtPolygonRegular.h"
+#include "TxtTriangle.h"
 #include "TxtGroupForm.h"
 
 using namespace std;
 
-/**
- * @brief Initialize the COR design pattern
-*/
 class InitializeCor
 {
 private:
-	/**
-	 * @brief The instance of the singleton representing the cor design pattern
-	*/
 	static InitializeCor _instance;
-
-	/**
-	 * @brief The actual cor
-	*/
 	VReadDetector* _detectorRead;
 
 	InitializeCor();
