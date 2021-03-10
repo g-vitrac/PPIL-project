@@ -1,6 +1,7 @@
 #pragma once
 #include "VRead.h"
 
+
 class VReadByTxt : public VRead
 {
 public:

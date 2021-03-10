@@ -1,6 +1,9 @@
 #pragma once
 #include "Form.h"
 
+/**
+ * @brief Model of the circle
+*/
 class Circle : public Form
 {
 private:

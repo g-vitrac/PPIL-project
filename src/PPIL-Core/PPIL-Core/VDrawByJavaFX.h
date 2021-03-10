@@ -2,6 +2,9 @@
 #include <WS2tcpip.h>
 #pragma comment(lib, "ws2_32.lib")
 
+/**
+ * @brief the implementation of the vdraw for the javafx server
+*/
 class VDrawByJavaFX : public VDraw
 {
 private:

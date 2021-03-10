@@ -2,6 +2,9 @@
 #include "VReadDetector.h"
 #include "GroupForm.h"
 
+/**
+ * @brief The expert that detects GroupForm
+*/
 class TxtGroupForm : public VReadDetector {
 public:
 	TxtGroupForm(VReadDetector* next) : VReadDetector(next) {}

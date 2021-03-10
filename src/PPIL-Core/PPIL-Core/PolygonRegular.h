@@ -1,6 +1,9 @@
 #pragma once
 #include "PolygonConvex.h"
 
+/**
+ * @brief Model of a regular polygon
+*/
 class PolygonRegular : public PolygonConvex
 {
 public:
