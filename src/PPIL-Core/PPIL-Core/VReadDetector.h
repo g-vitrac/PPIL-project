@@ -8,7 +8,7 @@ class VReadDetector
 public:
 	VReadDetector(VReadDetector* next) : _next(next) {}
 	~VReadDetector() { 
-																cerr << "Appel à VReadDetector" << endl;
+																//cerr << "Appel à VReadDetector" << endl;
 		if (_next) delete _next;
 	} 
 

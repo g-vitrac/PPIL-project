@@ -1,39 +1,155 @@
-#include "Vecteur2D.h"
-#include "Segment.h"
-#include "Circle.h"
-#include "GroupForm.h"
-#include "World.h"
 #include "PolygonConvex.h"
-
-#include "TCircle.h"
-#include "TSegment.h"
-#include "TVecteur2D.h"
-#include "TPolygonConvex.h"
-#include "TDraw.h"
-#include "TGroupForm.h"
-
-using namespace std;
+#include "PolygonRegular.h"
+#include "Triangle.h"
+#include "VDrawByJavaFX.h"
+#include "VReadByTxt.h"
+#include "InitializeSocket.h"
+#include "VSaveByTxt.h"
+#include <Windows.h>
 
 int main() {
+	try {
+		//Creation des formes
+		Vector2D A(0, 0), B(-50, 100), C(75, -73), D(-40, 95), E(-140, 80), F(-120, 60), G(-100, -40), H(-80, 0), I(-60, 0);
+		Circle* cercleA = new Circle(A, 50);
+		Segment* segmentA = new Segment(B, C, Color(Color::RED));
+		Triangle* triangleA = new Triangle(E, D, F);
+		vector<Vector2D> vectors; vectors.push_back(E); vectors.push_back(F); vectors.push_back(G); vectors.push_back(H); vectors.push_back(I);
+		PolygonConvex* polygonConvex = new PolygonConvex(vectors);
+		PolygonRegular* polygonRegular = new PolygonRegular(Vector2D(120, 120), 60, 7);
 
-	//TCircle tcircle = TCircle(); tcircle.test();
-	//TSegment tsegment = TSegment(); tsegment.test();
-	//TVecteur2D tvecteur2D = TVecteur2D(); tvecteur2D.test();
-	//TPolygonConvex tpolygonConvex = TPolygonConvex(); tpolygonConvex.test();
-	TDraw draw = TDraw(); draw.test();
-	//TGroupForm groupForm = TGroupForm(); groupForm.test();
+		GroupForm* subRootA = new GroupForm();
+		subRootA->insertChild(cercleA);
+		subRootA->insertChild(triangleA);
 
-	/*
-	Vecteur2D Vecteur2DA = Vecteur2D(0, 2);
-	cout << Vecteur2DA << endl;
-	Vecteur2D Vecteur2DB = Vecteur2D(4, 3);
-	cout << Vecteur2DB << endl;
-	Vecteur2D Vecteur2DC = Vecteur2D(4, 7);
-	cout << Vecteur2DC << endl;
-	Vecteur2D Vecteur2DD = Vecteur2D(0, 7);
-	cout << Vecteur2DD << endl;
+		GroupForm* subRootB = new GroupForm(Color("1aEaBa"));
+		subRootB->insertChild(segmentA);
+		subRootB->insertChild(polygonRegular);
 
-	Segment * segmentA = new Segment(Vecteur2DA, Vecteur2DB, Form::RED);
-	//delete segmentA; fonctionne
-	*/
+		GroupForm* rootForm = new GroupForm(Color("#CE0DC0"));
+		rootForm->insertChild(subRootA);
+		rootForm->insertChild(subRootB);
+		rootForm->insertChild(polygonConvex);
+
+		//On affiche toutes les formes du root
+		cout << *rootForm << endl;
+
+		//On se connecte au serveur
+		VDrawByJavaFX* visitorJavaFX = new VDrawByJavaFX(true);
+		rootForm->draw(visitorJavaFX, rootForm->getColor());
+		
+		cout << "TRANSLATE..." << endl;
+		Sleep(3000);
+		Vector2D translate(60, -40);
+		rootForm->translate(translate);
+		visitorJavaFX->clear();
+		//visitorJavaFX->resize(rootForm->calculateWindowSize());
+		rootForm->draw(visitorJavaFX, rootForm->getColor());
+
+
+		Sleep(3000);
+		rootForm->translate(-translate);
+		visitorJavaFX->clear();
+		//visitorJavaFX->resize(rootForm->calculateWindowSize());
+		rootForm->draw(visitorJavaFX, rootForm->getColor());
+
+
+		cout << "ROTATE..." << endl;
+		Sleep(3000);
+		Vector2D rotate = rootForm->calculateGravityVector2D();
+		rootForm->rotate(180 * (Form::M_PI / 180), rotate);
+		visitorJavaFX->clear();
+		//visitorJavaFX->resize(rootForm->calculateWindowSize());
+		rootForm->draw(visitorJavaFX, rootForm->getColor());
+
+		Sleep(3000);
+		rootForm->rotate(180 * (Form::M_PI / 180), rotate);
+		visitorJavaFX->clear();
+		//visitorJavaFX->resize(rootForm->calculateWindowSize());
+		rootForm->draw(visitorJavaFX, rootForm->getColor());
+
+		cout << "ZOOM..." << endl;
+		Sleep(3000);
+		Vector2D zoom = rootForm->calculateGravityVector2D();
+		rootForm->homothety(2, zoom);
+		visitorJavaFX->clear();
+		//visitorJavaFX->resize(rootForm->calculateWindowSize());
+		rootForm->draw(visitorJavaFX, rootForm->getColor());
+
+		Sleep(3000);
+		rootForm->homothety(0.5, zoom);
+		visitorJavaFX->clear();
+		//visitorJavaFX->resize(rootForm->calculateWindowSize());
+		rootForm->draw(visitorJavaFX, rootForm->getColor());
+
+
+
+		cout << "SPEED TRANSLATE + RESIZE" << endl;
+		Sleep(3000);
+		for (int i = 0; i < 50; i++) {
+			Sleep(50);
+			visitorJavaFX->clear();
+			visitorJavaFX->resize(rootForm->calculateWindowSize());
+			rootForm->translate(Vector2D(3, 3));
+			rootForm->draw(visitorJavaFX, rootForm->getColor());
+		}
+		for (int i = 0; i < 50; i++) {
+			Sleep(50);
+			visitorJavaFX->clear();
+			visitorJavaFX->resize(rootForm->calculateWindowSize());
+			rootForm->translate(Vector2D(-3, -3));
+			rootForm->draw(visitorJavaFX, rootForm->getColor());
+		}
+
+		cout << "SPEED ROTATE + RESIZE" << endl;
+		Sleep(3000);
+		for (int i = 0; i < 360; i++) {
+			Sleep(5);
+			visitorJavaFX->clear();
+			visitorJavaFX->resize(rootForm->calculateWindowSize());
+			rootForm->rotate(1 * (Form::M_PI / 180), rootForm->calculateGravityVector2D());
+			rootForm->draw(visitorJavaFX, rootForm->getColor());
+		}
+
+		cout << "SPEED ZOOM + RESIZE" << endl;
+		Sleep(3000);
+		for (int i = 0; i < 50; i++) {
+			Sleep(50);
+			visitorJavaFX->clear();
+			visitorJavaFX->resize(rootForm->calculateWindowSize());
+			rootForm->homothety(1.01, rootForm->calculateGravityVector2D());
+			rootForm->draw(visitorJavaFX, rootForm->getColor());
+		}
+		for (int i = 0; i < 50; i++) {
+			Sleep(50);
+			visitorJavaFX->clear();
+			visitorJavaFX->resize(rootForm->calculateWindowSize());
+			rootForm->homothety(0.99, rootForm->calculateGravityVector2D());
+			rootForm->draw(visitorJavaFX, rootForm->getColor());
+		}
+
+		visitorJavaFX->close();
+
+		cout << "SAVE FORMS AND PRINT" << endl;
+		Sleep(3000);
+		VSaveByTxt* visitorSaveTxt = new VSaveByTxt();
+		visitorSaveTxt->open("saveForms.txt");
+		rootForm->save(visitorSaveTxt);
+		visitorSaveTxt->close();
+		cout << *rootForm << endl;
+
+
+		cout << "READ FORMS AND PRINT" << endl;
+		Sleep(3000);
+		VReadByTxt* visitorReadTxt = new VReadByTxt();
+		vector<Form*> forms = visitorReadTxt->read("saveForms.txt");
+
+		for (unsigned int i = 0; i < forms.size(); i++) {
+			cout << *forms[i] << endl;
+		}
+
+	}
+	catch (Error const& err) {
+		cerr << err << endl;
+	}
 }

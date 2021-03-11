@@ -174,10 +174,10 @@
     <ClCompile Include="GroupForm.cpp" />
     <ClCompile Include="InitializeCor.cpp" />
     <ClCompile Include="InitializeSocket.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrix22.cpp" />
     <ClCompile Include="PolygonG.cpp" />
     <ClCompile Include="PolygonConvex.cpp" />
-    <ClCompile Include="TDraw.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="TxtCircle.cpp" />
     <ClCompile Include="TxtGroupForm.cpp" />

@@ -1,9 +1,5 @@
-- explicit constructeur
-- inline
 - faire les commentaires pour docu
-- ajouter les nouvelles formes
-- delete cor read
-- UML
+- UML cardinalités
 
 //AVANT DE RENDRE
 - Faire le rapport

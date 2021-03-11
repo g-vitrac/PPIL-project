@@ -37,6 +37,15 @@ Vector2D const PolygonG::calculateGravityVector2D() const
 	}
 }
 
+const Vector2D PolygonG::calculateWindowSize() const
+{
+	Vector2D max(0,0);
+	for (unsigned int i = 0; i < _formVecteur2D.size(); i++) {
+		max = max.maximum(_formVecteur2D[i]);
+	}
+	return max * 2;
+}
+
 void PolygonG::translate(const Vector2D& vec)
 {
 	for (unsigned int i = 0; i < _formVecteur2D.size(); i++) {

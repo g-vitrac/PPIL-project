@@ -12,6 +12,7 @@ int main() {
 		Circle* cercleB = new Circle(D, 30, Color(Color::BLACK));
 		vector<Vector2D> forms; forms.push_back(E); forms.push_back(F); forms.push_back(G); forms.push_back(H); forms.push_back(I);
 		PolygonConvex* polygonConv = new PolygonConvex(forms);
+		PolygonRegular* polygonRegular = new PolygonRegular(Vector2D(30,20), 60, 5);
 		Triangle* triangle = new Triangle(D, A, B, Color("aaaaaa"));
 		Segment* segmentA = new Segment(B, C, Color(Color::YELLOW));
 		GroupForm* subRootA = new GroupForm();
@@ -24,9 +25,9 @@ int main() {
 		rootForm->insertChild(subRootA);
 		rootForm->insertChild(subRootB);
 		rootForm->insertChild(polygonConv);
+		rootForm->insertChild(polygonRegular);
 
 		rootForm->save(visitorDrawText);
-		//visitorDrawText->clear();
 		visitorDrawText->close();
 
 		cout << *rootForm << endl;

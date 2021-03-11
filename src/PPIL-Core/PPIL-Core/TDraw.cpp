@@ -1,6 +1,7 @@
 #pragma once
 
 #include "PolygonConvex.h"
+#include "PolygonRegular.h"
 #include "VDrawByJavaFX.h"
 #include "InitializeSocket.h"
 #include <Windows.h>
@@ -14,6 +15,7 @@ int main() {
 		Segment* segmentA = new Segment(B, C, Color(Color::RED));
 		vector<Vector2D> forms; forms.push_back(E); forms.push_back(F); forms.push_back(G); forms.push_back(H); forms.push_back(I);
 		PolygonConvex* polygonConvex = new PolygonConvex(forms);
+		PolygonRegular* polygonRegular = new PolygonRegular(Vector2D(300, 120), 150, 5);
 		GroupForm* subRootA = new GroupForm();
 		GroupForm* subRootB = new GroupForm(Color("1aEaBa"));
 		GroupForm* rootForm = new GroupForm(Color("#CE0DC0"));
@@ -23,6 +25,7 @@ int main() {
 		subRootB->insertChild(cercleB);
 		rootForm->insertChild(subRootA);
 		rootForm->insertChild(subRootB);
+		rootForm->insertChild(polygonRegular);
 
 		Form* root = rootForm->clone();
 		Circle* center = new Circle(root->calculateGravityVector2D(), 5);
@@ -32,7 +35,6 @@ int main() {
 		for (int i =0; i < 50; i++) {
 			Sleep(50);
 			visitorJavaFX->clear();
-			//root = root->translate(Vector2D(3, 3));
 			root->translate(Vector2D(3,3));
 			root->draw(visitorJavaFX, root->getColor());
 			center->draw(visitorJavaFX, center->getColor());

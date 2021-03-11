@@ -218,8 +218,8 @@
     <ClCompile Include="PolygonG.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="TDraw.cpp">
-      <Filter>Fichiers sources\test</Filter>
+    <ClCompile Include="main.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

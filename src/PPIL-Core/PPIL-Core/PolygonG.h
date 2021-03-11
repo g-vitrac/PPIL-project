@@ -16,7 +16,7 @@ public:
 
 	virtual const double calculatePerimeter() const;
 	virtual const Vector2D calculateGravityVector2D() const;
-	virtual const Vector2D calculateWindowSize() const { return Vector2D(); }
+	virtual const Vector2D calculateWindowSize() const;
 
 	virtual void translate(const Vector2D& vec);
 	virtual void rotate(const double& radian, const Vector2D& center = Vector2D(0, 0));

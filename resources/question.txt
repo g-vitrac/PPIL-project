@@ -1,9 +1,0 @@
-- voir le read/save
-- resize() dans draw() ?
-- v1 = v2+= v3 non detecté / root = root->transform() marche pas
-- faut-il verfifer que polygon = bien convex ?
-- Polygon dans draw bug completement imcomprehensible
-- delete cor
-- draw abstract dans Polygon ou ou pas ?
-
-

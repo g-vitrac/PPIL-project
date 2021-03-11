@@ -1,2 +1,14 @@
-﻿  VDrawByJavaFX.cpp
+﻿  InitializeCor.cpp
+  InitializeSocket.cpp
+  TxtCircle.cpp
+  TxtGroupForm.cpp
+  TxtPolygonConvex.cpp
+  TxtPolygonRegular.cpp
+  TxtSegment.cpp
+  TxtTriangle.cpp
+  VRead.cpp
+  VReadByTxt.cpp
+  VReadDetector.cpp
+  main.cpp
+  Génération de code en cours...
   PPIL-Core.vcxproj -> D:\Users\loick\Documents\PPIL-project\src\PPIL-Core\x64\Debug\PPIL-Core.exe

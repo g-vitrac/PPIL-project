@@ -20,7 +20,7 @@ public:
 
 	void insertChild(Form* form);
 	void removeChild(int index);
-	void replaceNode(Form* form);
+	//void replaceNode(Form* form);
 
 	virtual void translate(const Vector2D& vec);
 	virtual void rotate(const double& degrees, const Vector2D& center = Vector2D(0, 0));

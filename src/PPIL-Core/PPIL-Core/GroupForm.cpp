@@ -105,42 +105,17 @@ void GroupForm::insertChild(Form* form)
 
 void GroupForm::removeChild(int index)
 {
-	/*
-	int size = _childsForm.size();
-	if (index < size && index >= 0) {
-		delete (_childsForm[index]);
-		_childsForm.erase(_childsForm.begin() + index);
-		return NULL;
-	}
-	throw Error("removeChild : index overflow");
-	*/
-
 	size_t size = _childsForm.size();
 	if (index < size && index >= 0) {
 		delete _childsForm[index];
 		_childsForm.erase(_childsForm.begin() + index);
 	}
 	else throw Error("removeChild : index overflow");
-
-	/*
-	GroupForm* groupForm = (GroupForm*)this->clone();
-	Form* save = form->_parentForm;
-	form->_parentForm = NULL;
-	for (unsigned int i = 0; i < _childsForm.size(); i++) {
-		if (_childsForm[i]->_parentForm == NULL) {
-			delete groupForm->_childsForm[i];
-			groupForm->_childsForm.erase(groupForm->_childsForm.begin() + i);
-			break;
-		}
-	}
-	form->_parentForm = save;
-	return groupForm;
-	*/
 }
 
+/*
 void GroupForm::replaceNode(Form* form)
 {
-	/*
 	Form* clone = form->clone();
 	Form* save 
 	if (_parentForm != NULL) {
@@ -151,8 +126,8 @@ void GroupForm::replaceNode(Form* form)
 	}
 	delete _childsForm[i];
 	_childsForm[i] = clone;
-	*/
 }
+*/
 
 GroupForm::operator string() const
 {
