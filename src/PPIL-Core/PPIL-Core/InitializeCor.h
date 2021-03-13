@@ -11,10 +11,20 @@
 
 using namespace std;
 
+/**
+ * @brief Initialize the COR design pattern
+*/
 class InitializeCor
 {
 private:
+	/**
+	 * @brief The instance of the singleton representing the cor design pattern
+	*/
 	static InitializeCor _instance;
+
+	/**
+	 * @brief The actual cor
+	*/
 	VReadDetector* _detectorRead;
 
 	InitializeCor();

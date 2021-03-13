@@ -8,6 +8,9 @@
 
 using namespace std;
 
+/**
+ * @brief Matrix that is used to rotates the different form
+*/
 class Matrix22
 {
 private:

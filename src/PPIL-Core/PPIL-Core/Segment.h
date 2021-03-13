@@ -1,6 +1,9 @@
 #pragma once
 #include "Form.h"
 
+/**
+ * @brief Model of a segment
+*/
 class Segment : public Form
 {
 	Vector2D _vecA;

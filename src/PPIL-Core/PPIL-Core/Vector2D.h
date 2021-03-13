@@ -8,6 +8,9 @@
 
 using namespace std;
 
+/**
+ * @brief Can either be the model of a point or a vector used in the different operations on the form class
+*/
 class Vector2D
 {
 private:

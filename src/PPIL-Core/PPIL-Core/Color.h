@@ -7,6 +7,10 @@
 
 using namespace std;
 
+/**
+ * @brief The classed used to represent the different color
+*/
+
 class Color
 {
 private:

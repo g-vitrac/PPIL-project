@@ -1,6 +1,9 @@
 #pragma once
 #include "Form.h"
 
+/**
+ * @brief Model of a polygon
+*/
 class PolygonG : public Form
 {
 protected:

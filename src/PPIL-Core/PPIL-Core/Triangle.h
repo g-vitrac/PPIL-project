@@ -1,6 +1,9 @@
 #pragma once
 #include "PolygonConvex.h"
 
+/**
+ * @brief Model of a triangle
+*/
 class Triangle : public PolygonConvex
 {
 public:
