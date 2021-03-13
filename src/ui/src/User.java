@@ -57,6 +57,10 @@ public class User extends Thread {
 		  }
 		  finally {
 				System.out.println("La session de dessin est terminé");
+				Platform.runLater(()->{
+					scene.stage.close();
+				});
+				this.interrupt();
 		  }
 	};
 	

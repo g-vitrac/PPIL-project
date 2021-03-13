@@ -128,6 +128,7 @@ int main() {
 			rootForm->draw(visitorJavaFX, rootForm->getColor());
 		}
 
+		getchar();
 		visitorJavaFX->close();
 
 		cout << "SAVE FORMS AND PRINT" << endl;
@@ -147,6 +148,7 @@ int main() {
 		for (unsigned int i = 0; i < forms.size(); i++) {
 			cout << *forms[i] << endl;
 		}
+
 
 	}
 	catch (Error const& err) {
