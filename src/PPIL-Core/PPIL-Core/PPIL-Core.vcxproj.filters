@@ -144,6 +144,9 @@
     <ClInclude Include="TxtPolygonRegular.h">
       <Filter>Fichiers d%27en-tête\visitor\read\readByTxt\expert</Filter>
     </ClInclude>
+    <ClInclude Include="VDrawByQtPy.h">
+      <Filter>Fichiers d%27en-tête\visitor\draw</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Segment.cpp">
@@ -220,6 +223,9 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="VDrawByQtPy.cpp">
+      <Filter>Fichiers sources\visitor\draw</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

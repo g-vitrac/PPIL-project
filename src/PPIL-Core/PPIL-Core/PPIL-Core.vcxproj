@@ -156,6 +156,7 @@
     <ClInclude Include="TxtPolygonRegular.h" />
     <ClInclude Include="TxtSegment.h" />
     <ClInclude Include="TxtTriangle.h" />
+    <ClInclude Include="VDrawByQtPy.h" />
     <ClInclude Include="VReadDetector.h" />
     <ClInclude Include="VDraw.h" />
     <ClInclude Include="VDrawByJavaFX.h" />
@@ -186,6 +187,7 @@
     <ClCompile Include="TxtSegment.cpp" />
     <ClCompile Include="TxtTriangle.cpp" />
     <ClCompile Include="VDrawByJavaFX.cpp" />
+    <ClCompile Include="VDrawByQtPy.cpp" />
     <ClCompile Include="Vecteur2D.cpp" />
     <ClCompile Include="PolygonRegular.cpp" />
     <ClCompile Include="Segment.cpp" />
