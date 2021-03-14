@@ -1,8 +1,5 @@
-- faire les commentaires pour docu
-- UML cardinalités
-
 //AVANT DE RENDRE
-- Faire le rapport
+- Ajouer Qt dans rapport
 - Nettoyer projet (.cpp/.h inutile, ce doc)
-- Faire un README
+- Completer README
 - creer javadoc, c++doc

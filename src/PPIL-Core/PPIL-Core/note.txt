@@ -1,9 +1,0 @@
-/QUESTION\
-- Square -> simplifier dans polygon qui est abstrait ?.
-- créer figure à partir de point ou de segment ? -> arraySegment directement dans l'ordre qui correspond aux segments
-- tout reconstruire à chaque modification de figure ?
-
-/CORRECTION\
-- réecrire getCollectionPointsToGravity() -> moyen opti de recuperer les points ?
-
-
